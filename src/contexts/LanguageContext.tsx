@@ -149,6 +149,11 @@ export const TRANSLATIONS: Translations = {
   'equipment.carretaConvencional': { pt: 'Carreta Convencional', en: 'Conventional Trailer' },
   'equipment.cavalosMecanicos': { pt: 'Cavalos Mecânicos',     en: 'Truck Tractors' },
   'equipment.pranchas':         { pt: 'Pranchas',              en: 'Flatbeds' },
+
+  //Footer
+  'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA'},
+  'footer.links':               { pt: 'Links',                  en: 'Links'},
+  'footer.services':            { pt: 'Serviços',               en: 'Serviços'}  
 };
 
 interface LanguageContextType {

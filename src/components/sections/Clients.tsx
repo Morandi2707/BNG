@@ -12,7 +12,6 @@ import SectionTitle from '../ui/SectionTitle';
 import ArrowButton from '../ui/ArrowButton';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
-// logos
 import aliseoLogo from '../img/Aliseo.png';
 import technipLogo from '../img/TechnipFMC.webp';
 import bakerLogo from '../img/Baker.png';
@@ -26,25 +25,39 @@ import bracellLogo from '../img/Bracell.png';
 import sylvamoLogo from '../img/Sylvamo.png';
 import suzanoLogo from '../img/Suzano.png';
 import petrobrasLogo from '../img/Petrobras.png';
+import seatriumLogo from '../img/Seatrium.png';
+import oceaneeringLogo from '../img/Oceaneering.png';
+import redeLogo from '../img/Rede.jpg';
+import suncokeLogo from '../img/Suncoke.png';
 
 type CategoryKey = 'all' | 'oilgas' | 'offshore' | 'steel' | 'mining' | 'pulp';
-interface Client { id: string; name: string; logo: string; category: CategoryKey; href?: string; }
+
+interface Client {
+  id: string;
+  name: string;
+  logo: string;
+  categories: Exclude<CategoryKey, 'all'>[];
+  href?: string;
+}
 
 const allClients: Client[] = [
-  /* ... seus 13 clientes ... */
-   { id:'1', name:'Aliseo', logo:aliseoLogo, category:'oilgas', href:'https://www.aliseosa.com.br/sobre/' },
-  { id:'2', name:'TechnipFMC', logo:technipLogo, category:'oilgas', href:'https://www.technipfmc.com' },
-  { id:'3', name:'Baker Hughes', logo:bakerLogo, category:'oilgas', href:'https://www.bakerhughes.com' },
-  { id:'4', name:'Prysmian', logo:prysLogo, category:'offshore', href:'https://www.prysmiangroup.com' },
-  { id:'5', name:'Ocyan', logo:ocyanLogo, category:'offshore', href:'https://www.ocyan.com.br' },
-  { id:'6', name:'Subsea7', logo:subsea7Logo, category:'offshore', href:'https://www.subsea7.com' },
-  { id:'7', name:'Arcelormittal', logo:arcLogo, category:'steel', href:'https://corporate.arcelormittal.com' },
-  { id:'8', name:'Vale', logo:valeLogo, category:'mining', href:'https://www.vale.com' },
-  { id:'9', name:'Grupo Simec', logo:simecLogo, category:'steel', href:'https://www.simec.com.br' },
-  { id:'10', name:'Bracell', logo:bracellLogo, category:'pulp', href:'https://www.bracell.com' },
-  { id:'11', name:'Sylvamo', logo:sylvamoLogo, category:'pulp', href:'https://www.sylvamo.com' },
-  { id:'12', name:'Suzano', logo:suzanoLogo, category:'pulp', href:'https://www.suzano.com.br' },
-  { id:'13', name:'Petrobras', logo:petrobrasLogo, category:'oilgas', href:'https://petrobras.com.br' },
+  { id:'1',  name:'Aliseo',        logo:aliseoLogo,       categories:['oilgas','offshore'], href:'https://www.aliseosa.com.br/sobre/' },
+  { id:'2',  name:'TechnipFMC',    logo:technipLogo,       categories:['oilgas','offshore'], href:'https://www.technipfmc.com' },
+  { id:'3',  name:'Baker Hughes',  logo:bakerLogo,         categories:['oilgas','offshore'], href:'https://www.bakerhughes.com' },
+  { id:'4',  name:'Prysmian',      logo:prysLogo,          categories:['offshore'],           href:'https://www.prysmiangroup.com' },
+  { id:'5',  name:'Ocyan',         logo:ocyanLogo,         categories:['offshore'],           href:'https://www.ocyan.com.br' },
+  { id:'6',  name:'Subsea7',       logo:subsea7Logo,       categories:['offshore'],           href:'https://www.subsea7.com' },
+  { id:'7',  name:'Arcelormittal', logo:arcLogo,           categories:['steel'],              href:'https://corporate.arcelormittal.com' },
+  { id:'8',  name:'Vale',          logo:valeLogo,          categories:['mining'],             href:'https://www.vale.com' },
+  { id:'9',  name:'Grupo Simec',   logo:simecLogo,         categories:['steel'],              href:'https://www.simec.com.br' },
+  { id:'10', name:'Bracell',       logo:bracellLogo,       categories:['pulp'],               href:'https://www.bracell.com' },
+  { id:'11', name:'Sylvamo',       logo:sylvamoLogo,       categories:['pulp'],               href:'https://www.sylvamo.com' },
+  { id:'12', name:'Suzano',        logo:suzanoLogo,        categories:['pulp'],               href:'https://www.suzano.com.br' },
+  { id:'13', name:'Petrobras',     logo:petrobrasLogo,     categories:['oilgas'],             href:'https://petrobras.com.br' },
+  { id:'14', name:'Seatrium',      logo:seatriumLogo,      categories:['offshore'],           href:'https://seatrium.com/brazil-pt.php' },
+  { id:'15', name:'Oceaneering',   logo:oceaneeringLogo,   categories:['offshore'],           href:'https://www.oceaneering.com/pt/' },
+  { id:'16', name:'Rede Montagens',logo:redeLogo,          categories:['steel','mining'],     href:'https://redemontagens.com.br/' },
+  { id:'17', name:'SunCoke',       logo:suncokeLogo,       categories:['mining'],             href:'https://www.suncoke.com/pt' },
 ];
 
 const categoryKeys: CategoryKey[] = ['all','oilgas','offshore','steel','mining','pulp'];
@@ -57,7 +70,6 @@ const categoryColors = {
   pulp: 'from-green-400 to-emerald-500'
 };
 
-// hook para obter largura da janela
 function useWindowWidth() {
   const [w, setW] = useState(typeof window === 'undefined' ? 0 : window.innerWidth);
   useEffect(() => {
@@ -68,13 +80,12 @@ function useWindowWidth() {
   return w;
 }
 
-// define quantos cards por página
 function getPerSlide(width: number) {
   if (width >= 1536) return 6;
   if (width >= 1280) return 5;
   if (width >= 1024) return 4;
-  if (width >= 768) return 3;
-  if (width >= 640) return 2;
+  if (width >= 768)  return 3;
+  if (width >= 640)  return 2;
   return 1;
 }
 
@@ -134,14 +145,13 @@ export default function Clients() {
   const filtered = useMemo(() =>
     filter === 'all'
       ? allClients
-      : allClients.filter(c => c.category === filter),
+      : allClients.filter(c => c.categories.includes(filter)),
   [filter]);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
-  // atualiza setas e página ativa
   const updateScrollState = useCallback(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -172,11 +182,10 @@ export default function Clients() {
   };
 
   const totalPages = Math.ceil(filtered.length / perSlide);
-  // Remove o último dot
-  const indicatorCount = totalPages > 1 ? totalPages - 1 : 0;
+  const indicatorCount = totalPages; // agora mostra todos os dots
 
   return (
-    <section id='clients' className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section id="clients" className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Container>
         <SectionTitle
           title={translate('clients.title')}
@@ -184,7 +193,6 @@ export default function Clients() {
           className="text-center mb-12"
         />
 
-        {/* filtros */}
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
           {categoryKeys.map(key => (
             <button
@@ -203,14 +211,7 @@ export default function Clients() {
         </div>
 
         <div className="relative group">
-          {/* seta voltar */}
-          <ArrowButton
-            direction="left"
-            onClick={() => scrollByPage('left')}
-            disabled={!canScrollLeft}
-          />
-
-          {/* container scroll-snap */}
+          <ArrowButton direction="left"  onClick={() => scrollByPage('left')}  disabled={!canScrollLeft}/>
           <div
             ref={containerRef}
             className="relative z-0 flex overflow-x-auto hide-scrollbar scroll-pl-6 snap-x snap-mandatory gap-4 py-4 px-2"
@@ -225,16 +226,10 @@ export default function Clients() {
               />
             ))}
           </div>
-
-          {/* seta avançar */}
-          <ArrowButton
-            direction="right"
-            onClick={() => scrollByPage('right')}
-            disabled={!canScrollRight}
-          />
+          <ArrowButton direction="right" onClick={() => scrollByPage('right')} disabled={!canScrollRight}/>
         </div>
 
-        {/* indicadores clicáveis, sem o último dot */}
+        {/* indicadores clicáveis */}
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: indicatorCount }).map((_, i) => {
             const active = i === currentPage;
@@ -242,11 +237,12 @@ export default function Clients() {
               <button
                 key={i}
                 onClick={() => goToPage(i)}
+                aria-label={`Ir para página ${i + 1}`}
                 className={`
-                  transition-all duration-300 ease-out
+                  cursor-pointer transition-all duration-300 ease-out
                   ${active
                     ? 'w-8 h-2 bg-blue-600 rounded-full animate-pulse'
-                    : 'w-4 h-1 bg-gray-300 rounded-full hover:w-6'}
+                    : 'w-4 h-1 bg-gray-300 rounded-full hover:w-6 hover:bg-gray-400'}
                 `}
               />
             );
@@ -254,7 +250,6 @@ export default function Clients() {
         </div>
       </Container>
 
-      {/* CSS scoped para esconder scrollbar */}
       <style>{`
         .hide-scrollbar {
           -ms-overflow-style: none;
