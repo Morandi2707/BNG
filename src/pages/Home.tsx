@@ -6,6 +6,7 @@ import Certifications from '../components/sections/Certifications';
 import Equipment from '../components/sections/Equipment';
 import Clients from '../components/sections/Clients';
 import Contact from '../components/sections/Contact';
+import Infrastructure from '../components/sections/Infraestructure.tsx';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <About />
       <Services />
+      <Infrastructure />
       <Mission />
       <Certifications />
       <Equipment />

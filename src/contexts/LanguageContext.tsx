@@ -26,7 +26,7 @@ export const TRANSLATIONS: Translations = {
 
   // About
   'about.title':            { pt: 'SOBRE A BNG',       en: 'ABOUT BNG' },
-  'about.subtitle':         { pt: 'Fundada em 1998, a BNG Metalmecânica possui 17.500 m² de área, incluindo 9.000 m² de estrutura construída, e capacidade de processar até 300 toneladas/mês.', en: 'Founded in 1998, BNG Metalmecânica has 17,500 m² of area, including 9,000 m² of built structure, and capacity to process up to 300 tons/month.' },
+  'about.subtitle':         { pt: 'Fundada em 1998,      Sediada no município da Serra – ES. Orientada à fabricação, montagem e serviços industriais, incluindo usinagem de peças, componentes e usinagem de campo. Atua nos setores de siderurgia, óleo e gás, mineração e estaleiros, sempre prezando por produtos e serviços de qualidade.', en: 'Founded in 1998, Headquartered in Serra, Espírito Santo – Brazil. Specialized in manufacturing, assembly, and industrial services, including machining of parts, components, and on-site machining. Serves the steel, oil & gas, mining, and shipyard sectors, always committed to delivering high-quality products and services.' },
   'about.industry.oil':           { pt: 'ÓLEO E GÁS',       en: 'OIL & GAS' },
   'about.industry.oil.desc':      { pt: 'Serviços especializados para o setor de óleo e gás, com foco em segurança e qualidade.', en: 'Specialized services for the oil and gas sector, focusing on safety and quality.' },
   'about.industry.offshore':      { pt: 'ESTALEIROS & OFFSHORE', en: 'SHIPYARDS & OFFSHORE' },
@@ -41,8 +41,8 @@ export const TRANSLATIONS: Translations = {
   'services.subtitle':      { pt: 'Oferecemos soluções completas em metalurgia para diversos setores industriais, com equipes qualificadas e equipamentos modernos.', en: 'We offer complete metallurgy solutions for various industrial sectors, with qualified teams and modern equipment.' },
   'services.structures':         { pt: 'Estruturas Metálicas', en: 'Metal Structures' },
   'services.structures.desc':    { pt: 'Fabricação e montagem de estruturas metálicas para diversos setores industriais, com projetos personalizados e alta resistência.', en: 'Manufacturing and assembly of metal structures for various industrial sectors, with customized projects and high resistance.' },
-  'services.boilermaking':       { pt: 'Caldeiraria',       en: 'Boilermaking' },
-  'services.boilermaking.desc':  { pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.', en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.' },
+  'services.caldeiraria':       { pt: 'Caldeiraria',       en: 'Boilermaking' },
+  'services.caldeiraria.desc':  { pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.', en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.' },
   'services.machining':          { pt: 'Usinagem',          en: 'Machining' },
   'services.machining.desc':     { pt: 'Usinagem de peças e componentes com precisão, utilizando equipamentos modernos e tecnologia avançada para garantir a qualidade.', en: 'Precision machining of parts and components, using modern equipment and advanced technology to ensure quality.' },
   'services.maintenance':        { pt: 'Montagem e Manutenção', en: 'Assembly & Maintenance' },
@@ -153,7 +153,11 @@ export const TRANSLATIONS: Translations = {
   //Footer
   'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA'},
   'footer.links':               { pt: 'Links',                  en: 'Links'},
-  'footer.services':            { pt: 'Serviços',               en: 'Serviços'}  
+  'footer.services':            { pt: 'Serviços',               en: 'Serviços'},
+
+  //infraestructure
+  'infrastructure.title':      {pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en:'BNG METALMECÂNICA INFRASTRUCTURE'},
+  'infrastructure.subtitle':   {pt: 'Infraestrutura com mais de 9.000 m² construídos em um terreno de 17.500 m², com capacidade para processar até 300 toneladas/mês em estruturas metálicas, caldeiraria e usinagem.', en:'Over 9,000 m² of built-up area on a 17,500 m² site, with monthly capacity of up to 300 tons in metal structures, boilerworks, and machining operations.'},
 };
 
 interface LanguageContextType {
