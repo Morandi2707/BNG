@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../contexts/LanguageContext';
 import BrazilFlag from '../img/brazil-flag.svg';
-import USAFlag from '../img/usa-flag.svg';
+import USAFlag from '../img/usa.png';
 
 const LanguageSelector = () => {
   const { language, changeLanguage } = useContext(LanguageContext);
