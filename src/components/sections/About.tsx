@@ -1,19 +1,30 @@
+// src/components/About.tsx
+
 import { useContext } from 'react';
-import { Factory, Droplet, Mountain, Anchor } from 'lucide-react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
-const icons = {
-  oil: <Droplet size={40} color="#042c70" />,
-  offshore: <Anchor size={40} color="#042c70" />,
-  steel: <Factory size={40} color="#f5cb0d" />,
-  mining: <Mountain size={40} color="#f5cb0d" />,
+// Importe suas imagens (confira nomes e paths exatos, incluindo case-sensitive)
+import oilImg       from '../img/oil.jpg';
+import offshoreImg  from '../img/offshore.jpg';
+import steelImg     from '../img/steel.jpg';
+import miningImg    from '../img/mining.webp';
+
+// Chaves tipadas para garantir consistência
+const industryKeys = ['oil', 'offshore', 'steel', 'mining'] as const;
+type IndustryKey = typeof industryKeys[number];
+
+// Mapeamento de cada chave à sua imagem
+const images: Record<IndustryKey, string> = {
+  oil:       oilImg,
+  offshore:  offshoreImg,
+  steel:     steelImg,
+  mining:    miningImg,
 };
 
-const About = () => {
+const About: React.FC = () => {
   const { translate } = useContext(LanguageContext);
-  const industries = ['oil','offshore','steel','mining'] as const;
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -23,16 +34,44 @@ const About = () => {
           subtitle={translate('about.subtitle')}
           className="text-black"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {industries.map((key) => (
-            <div key={key} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="mb-4 flex justify-center">{icons[key]}</div>
-              <h3 className="text-xl font-bold mb-2 text-black uppercase">
-                {translate(`about.industry.${key}`)}
-              </h3>
-              <p className="text-black">
-                {translate(`about.industry.${key}.desc`)}
-              </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          {industryKeys.map((key) => (
+            <div
+              key={key}
+              className="
+                group
+                bg-white
+                rounded-2xl
+                overflow-hidden
+                shadow-md
+                hover:shadow-lg
+                transition-shadow
+                duration-300
+
+                flex flex-col
+                h-full
+              "
+            >
+              {/* Imagem com altura fixa igual ao Services (h-48) */}
+              <div className="w-full h-48 bg-gray-100 overflow-hidden">
+                <img
+                  src={images[key]}
+                  alt={translate(`about.industry.${key}`)}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Conteúdo cresce pra preencher a altura */}
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold mb-2 text-black uppercase group-hover:text-[#032F70] transition-colors">
+                  {translate(`about.industry.${key}`)}
+                </h3>
+                <p className="text-gray-600 flex-1">
+                  {translate(`about.industry.${key}.desc`)}
+                </p>
+              </div>
             </div>
           ))}
         </div>
