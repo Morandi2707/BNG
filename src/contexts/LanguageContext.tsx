@@ -1,169 +1,279 @@
+// src/contexts/LanguageContext.tsx
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
 type Translations = {
   [key: string]: {
     pt: string;
     en: string;
+    zh: string;
   };
 };
 
 export const TRANSLATIONS: Translations = {
   // Navegação / Header
-  'nav.home':           { pt: 'Home',              en: 'Home' },
-  'nav.about':          { pt: 'Sobre',             en: 'About' },
-  'nav.services':       { pt: 'Serviços',          en: 'Services' },
-  'nav.certifications': { pt: 'Certificações',     en: 'Certifications' },
-  'nav.equipment':      { pt: 'Equipamentos',      en: 'Equipment' },
-  'nav.clients':        { pt: 'Clientes',          en: 'Clients' },
-  'nav.contact':        { pt: 'Contato',           en: 'Contact' },
-  'button.contact':     { pt: 'Fale Conosco',      en: 'Contact Us' },
+  'nav.home':           { pt: 'Home',              en: 'Home',              zh: '首页' },
+  'nav.about':          { pt: 'Sobre',             en: 'About',             zh: '关于我们' },
+  'nav.services':       { pt: 'Serviços',          en: 'Services',          zh: '服务' },
+  'nav.certifications': { pt: 'Certificações',     en: 'Certifications',     zh: '认证' },
+  'nav.equipment':      { pt: 'Equipamentos',      en: 'Equipment',         zh: '设备' },
+  'nav.clients':        { pt: 'Clientes',          en: 'Clients',           zh: '客户' },
+  'nav.contact':        { pt: 'Contato',           en: 'Contact',           zh: '联系我们' },
+  'button.contact':     { pt: 'Fale Conosco',      en: 'Contact Us',        zh: '联系我们' },
 
   // Hero
-  'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA' },
-  'hero.subtitle':        { pt: 'Soluções metalmecânicas de alta qualidade para as maiores empresas do Brasil.', en: 'High-quality metalworking solutions for the largest companies in Brazil.' },
-  'hero.button.services': { pt: 'Conheça Nossos Serviços', en: 'Discover Our Services' },
-  'hero.button.contact':  { pt: 'Entre em Contato',         en: 'Contact Us' },
+  'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA', zh: 'BNG 金属机械' },
+  'hero.subtitle':        {
+    pt: 'Soluções metalmecânicas de alta qualidade para as maiores empresas do Brasil.',
+    en: 'High-quality metalworking solutions for the largest companies in Brazil.',
+    zh: '为巴西最大公司提供高质量金属加工解决方案。'
+  },
+  'hero.button.services': { pt: 'Conheça Nossos Serviços', en: 'Discover Our Services', zh: '了解我们的服务' },
+  'hero.button.contact':  { pt: 'Entre em Contato',         en: 'Contact Us',          zh: '联系我们' },
 
   // About
-  'about.title':            { pt: 'SOBRE A BNG',       en: 'ABOUT BNG' },
-  'about.subtitle':         { pt: 'Fundada em 1998,      Sediada no município da Serra – ES. Orientada à fabricação, montagem e serviços industriais, incluindo usinagem de peças, componentes e usinagem de campo. Atua nos setores de siderurgia, óleo e gás, mineração e estaleiros, sempre prezando por produtos e serviços de qualidade.', en: 'Founded in 1998, Headquartered in Serra, Espírito Santo – Brazil. Specialized in manufacturing, assembly, and industrial services, including machining of parts, components, and on-site machining. Serves the steel, oil & gas, mining, and shipyard sectors, always committed to delivering high-quality products and services.' },
-  'about.industry.oil':           { pt: 'ÓLEO E GÁS',       en: 'OIL & GAS' },
-  'about.industry.oil.desc':      { pt: 'Serviços especializados para o setor de óleo e gás, com foco em segurança e qualidade.', en: 'Specialized services for the oil and gas sector, focusing on safety and quality.' },
-  'about.industry.offshore':      { pt: 'ESTALEIROS & OFFSHORE', en: 'SHIPYARDS & OFFSHORE' },
-  'about.industry.offshore.desc': { pt: 'Estruturas e componentes para aplicações marítimas e plataformas offshore.', en: 'Structures and components for marine applications and offshore platforms.' },
-  'about.industry.steel':         { pt: 'SIDERURGIA',       en: 'STEEL' },
-  'about.industry.steel.desc':    { pt: 'Atuação em indústrias siderúrgicas com soluções completas para equipamentos e estruturas.', en: 'Operations in steel industries with complete solutions for equipment and structures.' },
-  'about.industry.mining':        { pt: 'MINERAÇÃO',        en: 'MINING' },
-  'about.industry.mining.desc':   { pt: 'Soluções resistentes e duráveis para o ambiente exigente da mineração.', en: 'Resistant and durable solutions for the demanding mining environment.' },
+  'about.title':            { pt: 'SOBRE A BNG',       en: 'ABOUT BNG',     zh: '关于 BNG' },
+  'about.subtitle':         {
+    pt: 'Fundada em 1998, sediada no município da Serra – ES. Orientada à fabricação, montagem e serviços industriais, incluindo usinagem de peças, componentes e usinagem de campo. Atua nos setores de siderurgia, óleo e gás, mineração e estaleiros, sempre prezando por produtos e serviços de qualidade.',
+    en: 'Founded in 1998, Headquartered in Serra, Espírito Santo – Brazil. Specialized in manufacturing, assembly, and industrial services, including machining of parts, components, and on-site machining. Serves the steel, oil & gas, mining, and shipyard sectors, always committed to delivering high-quality products and services.',
+    zh: '成立于1998年，总部位于巴西圣埃斯皮里图州塞拉市。专注于制造、装配和工业服务，包括零件加工、组件加工和现场加工。服务于钢铁、石油天然气、采矿和造船行业，始终致力于提供高质量的产品和服务。'
+  },
+  'about.industry.oil':           { pt: 'ÓLEO E GÁS',       en: 'OIL & GAS',       zh: '石油与天然气' },
+  'about.industry.oil.desc':      {
+    pt: 'Serviços especializados para o setor de óleo e gás, com foco em segurança e qualidade.',
+    en: 'Specialized services for the oil and gas sector, focusing on safety and quality.',
+    zh: '专注于安全与质量的石油天然气行业专业服务。'
+  },
+  'about.industry.offshore':      { pt: 'ESTALEIROS & OFFSHORE', en: 'SHIPYARDS & OFFSHORE', zh: '船厂与海上工程' },
+  'about.industry.offshore.desc': {
+    pt: 'Estruturas e componentes para aplicações marítimas e plataformas offshore.',
+    en: 'Structures and components for marine applications and offshore platforms.',
+    zh: '用于海洋应用和海上平台的结构与组件。'
+  },
+  'about.industry.steel':         { pt: 'SIDERURGIA',       en: 'STEEL',           zh: '钢铁' },
+  'about.industry.steel.desc':    {
+    pt: 'Atuação em indústrias siderúrgicas com soluções completas para equipamentos e estruturas.',
+    en: 'Operations in steel industries with complete solutions for equipment and structures.',
+    zh: '在钢铁行业提供设备和结构的完整解决方案。'
+  },
+  'about.industry.mining':        { pt: 'MINERAÇÃO',        en: 'MINING',          zh: '采矿' },
+  'about.industry.mining.desc':   {
+    pt: 'Soluções resistentes e duráveis para o ambiente exigente da mineração.',
+    en: 'Resistant and durable solutions for the demanding mining environment.',
+    zh: '为严苛采矿环境提供坚固耐用的解决方案。'
+  },
 
   // Services
-  'services.title':         { pt: 'NOSSOS SERVIÇOS',   en: 'OUR SERVICES' },
-  'services.subtitle':      { pt: 'Oferecemos soluções completas em metalurgia para diversos setores industriais, com equipes qualificadas e equipamentos modernos.', en: 'We offer complete metallurgy solutions for various industrial sectors, with qualified teams and modern equipment.' },
-  'services.structures':         { pt: 'Estruturas Metálicas', en: 'Metal Structures' },
-  'services.structures.desc':    { pt: 'Fabricação e montagem de estruturas metálicas para diversos setores industriais, com projetos personalizados e alta resistência.', en: 'Manufacturing and assembly of metal structures for various industrial sectors, with customized projects and high resistance.' },
-  'services.caldeiraria':       { pt: 'Caldeiraria',       en: 'Boilermaking' },
-  'services.caldeiraria.desc':  { pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.', en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.' },
-  'services.machining':          { pt: 'Usinagem',          en: 'Machining' },
-  'services.machining.desc':     { pt: 'Usinagem de peças e componentes com precisão, utilizando equipamentos modernos e tecnologia avançada para garantir a qualidade.', en: 'Precision machining of parts and components, using modern equipment and advanced technology to ensure quality.' },
-  'services.maintenance':        { pt: 'Montagem e Manutenção', en: 'Assembly & Maintenance' },
-  'services.maintenance.desc':   { pt: 'Serviços completos de montagem e manutenção industrial, com equipes especializadas para atendimento eficiente e seguro.', en: 'Complete industrial assembly and maintenance services, with specialized teams for efficient and safe service.' },
+  'services.title':         { pt: 'NOSSOS SERVIÇOS',   en: 'OUR SERVICES',     zh: '我们的服务' },
+  'services.subtitle':      {
+    pt: 'Oferecemos soluções completas em metalurgia para diversos setores industriais, com equipes qualificadas e equipamentos modernos.',
+    en: 'We offer complete metallurgy solutions for various industrial sectors, with qualified teams and modern equipment.',
+    zh: '我们为各工业领域提供完整的冶金解决方案，拥有专业团队和现代化设备。'
+  },
+  'services.structures':         { pt: 'Estruturas Metálicas', en: 'Metal Structures', zh: '金属结构' },
+  'services.structures.desc':    {
+    pt: 'Fabricação e montagem de estruturas metálicas para diversos setores industriais, com projetos personalizados e alta resistência.',
+    en: 'Manufacturing and assembly of metal structures for various industrial sectors, with customized projects and high resistance.',
+    zh: '为各行业制造和组装金属结构，提供定制化设计与高强度。'
+  },
+  'services.caldeiraria':       { pt: 'Caldeiraria',       en: 'Boilermaking',     zh: '锅炉制作' },
+  'services.caldeiraria.desc':  {
+    pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.',
+    en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.',
+    zh: '提供重型与轻型锅炉制作服务，包括罐体、压力容器、筒仓及其他工业设备制造。'
+  },
+  'services.machining':          { pt: 'Usinagem',          en: 'Machining',        zh: '机加工' },
+  'services.machining.desc':     {
+    pt: 'Usinagem de peças e componentes com precisão, utilizando equipamentos modernos e tecnologia avançada para garantir a qualidade.',
+    en: 'Precision machining of parts and components, using modern equipment and advanced technology to ensure quality.',
+    zh: '使用现代设备和先进技术进行零件与组件的精密加工，确保质量。'
+  },
+  'services.maintenance':        { pt: 'Montagem e Manutenção', en: 'Assembly & Maintenance', zh: '装配与维护' },
+  'services.maintenance.desc':   {
+    pt: 'Serviços completos de montagem e manutenção industrial, com equipes especializadas para atendimento eficiente e seguro.',
+    en: 'Complete industrial assembly and maintenance services, with specialized teams for efficient and safe service.',
+    zh: '提供完整的工业装配和维护服务，专业团队确保高效与安全。'
+  },
 
   // Mission & Values
-  'mission.title':          { pt: 'NOSSA MISSÃO',      en: 'OUR MISSION' },
-  'mission.mission':        { pt: 'MISSÃO',            en: 'MISSION' },
-  'mission.mission.desc':   { pt: 'Garantir a disponibilidade e performance dos equipamentos dos nossos clientes, buscando a fidelização através de serviços de qualidade e atendimento diferenciado, com equipes qualificadas e comprometidas com a segurança, meio ambiente e resultados.', en: 'Ensure the availability and performance of our customers\' equipment, seeking loyalty through quality services and differentiated service, with qualified teams committed to safety, environment and results.' },
-  'mission.vision':         { pt: 'VISÃO',             en: 'VISION' },
-  'mission.vision.desc':    { pt: 'Ser reconhecida como referência em soluções metalmecânicas no Brasil, criando valor para clientes, colaboradores e acionistas, através da excelência operacional, inovação e sustentabilidade.', en: 'To be recognized as a reference in metalworking solutions in Brazil, creating value for customers, employees and shareholders, through operational excellence, innovation and sustainability.' },
-  'values.title':           { pt: 'NOSSOS VALORES',    en: 'OUR VALUES' },
-  'values.commitment':      { pt: 'COMPROMISSO',       en: 'COMMITMENT' },
-  'values.commitment.desc': { pt: 'Cumprimos os prazos e especificações acordados com os clientes.', en: 'We meet the deadlines and specifications agreed with customers.' },
-  'values.ethics':          { pt: 'ÉTICA',             en: 'ETHICS' },
-  'values.ethics.desc':     { pt: 'Atuamos com integridade e transparência em todas as relações de negócio.', en: 'We act with integrity and transparency in all business relationships.' },
-  'values.safety':          { pt: 'SEGURANÇA',         en: 'SAFETY' },
-  'values.safety.desc':     { pt: 'Priorizamos a segurança dos colaboradores e a qualidade dos serviços.', en: 'We prioritize employee safety and service quality.' },
-  'values.human':           { pt: 'VALORIZAÇÃO HUMANA', en: 'HUMAN VALUE' },
-  'values.human.desc':      { pt: 'Investimos no crescimento e bem-estar de nossa equipe.', en: 'We invest in the growth and well-being of our team.' },
-  'values.environment':     { pt: 'MEIO AMBIENTE',     en: 'ENVIRONMENT' },
-  'values.environment.desc':{ pt: 'Adotamos práticas sustentáveis em todos os nossos processos.', en: 'We adopt sustainable practices in all our processes.' },
-  'values.innovation':      { pt: 'INOVAÇÃO',          en: 'INNOVATION' },
-  'values.innovation.desc': { pt: 'Buscamos constantemente novas soluções e tecnologias para aprimorar nossos serviços.', en: 'We constantly seek new solutions and technologies to improve our services.' },
+  'mission.title':          { pt: 'NOSSA MISSÃO',      en: 'OUR MISSION',       zh: '我们的使命' },
+  'mission.mission':        { pt: 'MISSÃO',            en: 'MISSION',           zh: '使命' },
+  'mission.mission.desc':   {
+    pt: 'Garantir a disponibilidade e performance dos equipamentos dos nossos clientes, buscando a fidelização através de serviços de qualidade e atendimento diferenciado, com equipes qualificadas e comprometidas com a segurança, meio ambiente e resultados.',
+    en: 'Ensure the availability and performance of our customers\' equipment, seeking loyalty through quality services and differentiated service, with qualified teams committed to safety, environment and results.',
+    zh: '确保客户设备的可用性和性能，通过优质服务和差异化支持赢得忠诚，团队专注于安全、环境和成果。'
+  },
+  'mission.vision':         { pt: 'VISÃO',             en: 'VISION',            zh: '愿景' },
+  'mission.vision.desc':    {
+    pt: 'Ser reconhecida como referência em soluções metalmecânicas no Brasil, criando valor para clientes, colaboradores e acionistas, através da excelência operacional, inovação e sustentabilidade.',
+    en: 'To be recognized as a reference in metalworking solutions in Brazil, creating value for customers, employees and shareholders, through operational excellence, innovation and sustainability.',
+    zh: '成为巴西金属机械解决方案的标杆，通过卓越运营、创新和可持续发展为客户、员工及股东创造价值。'
+  },
+  'values.title':           { pt: 'NOSSOS VALORES',    en: 'OUR VALUES',        zh: '我们的价值观' },
+  'values.commitment':      { pt: 'COMPROMISSO',       en: 'COMMITMENT',        zh: '承诺' },
+  'values.commitment.desc': {
+    pt: 'Cumprimos os prazos e especificações acordados com os clientes.',
+    en: 'We meet the deadlines and specifications agreed with customers.',
+    zh: '我们遵守与客户约定的期限和规范。'
+  },
+  'values.ethics':          { pt: 'ÉTICA',             en: 'ETHICS',            zh: '道德' },
+  'values.ethics.desc':     {
+    pt: 'Atuamos com integridade e transparência em todas as relações de negócio.',
+    en: 'We act with integrity and transparency in all business relationships.',
+    zh: '我们在所有业务关系中以诚信和透明度行事。'
+  },
+  'values.safety':          { pt: 'SEGURANÇA',         en: 'SAFETY',            zh: '安全' },
+  'values.safety.desc':     {
+    pt: 'Priorizamos a segurança dos colaboradores e a qualidade dos serviços.',
+    en: 'We prioritize employee safety and service quality.',
+    zh: '我们优先考虑员工安全和服务质量。'
+  },
+  'values.human':           { pt: 'VALORIZAÇÃO HUMANA', en: 'HUMAN VALUE',       zh: '以人为本' },
+  'values.human.desc':      {
+    pt: 'Investimos no crescimento e bem-estar de nossa equipe.',
+    en: 'We invest in the growth and well-being of our team.',
+    zh: '我们投资于团队的成长和福祉。'
+  },
+  'values.environment':     { pt: 'MEIO AMBIENTE',     en: 'ENVIRONMENT',       zh: '环境' },
+  'values.environment.desc':{
+    pt: 'Adotamos práticas sustentáveis em todos os nossos processos.',
+    en: 'We adopt sustainable practices in all our processes.',
+    zh: '我们在所有流程中采用可持续实践。'
+  },
+  'values.innovation':      { pt: 'INOVAÇÃO',          en: 'INNOVATION',        zh: '创新' },
+  'values.innovation.desc': {
+    pt: 'Buscamos constantemente novas soluções e tecnologias para aprimorar nossos serviços.',
+    en: 'We constantly seek new solutions and technologies to improve our services.',
+    zh: '我们不断寻求新解决方案和技术以改进服务。'
+  },
 
   // Certifications
-  'cert.title':             { pt: 'NOSSAS CERTIFICAÇÕES', en: 'OUR CERTIFICATIONS' },
-  'cert.subtitle':          { pt: 'Comprometidos com a excelência, mantemos as mais importantes certificações do setor, garantindo qualidade e segurança em todos os nossos serviços.', en: 'Committed to excellence, we maintain the most important certifications in the sector, ensuring quality and safety in all our services.' },
-  'cert.iso45001.title':    { pt: 'ISO 45001:2018',      en: 'ISO 45001:2018' },
-  'cert.iso45001.desc':     { pt: 'Certificação internacional para Sistemas de Gestão de Saúde e Segurança Ocupacional, demonstrando nosso compromisso com a segurança dos colaboradores.', en: 'International certification for Occupational Health and Safety Management Systems, demonstrating our commitment to employee safety.' },
-  'cert.iso45001.benefit1': { pt: 'Ambiente de trabalho mais seguro', en: 'Safer work environment' },
-  'cert.iso45001.benefit2': { pt: 'Redução de acidentes de trabalho', en: 'Reduced workplace accidents' },
-  'cert.iso45001.benefit3': { pt: 'Conformidade com requisitos legais', en: 'Compliance with legal requirements' },
-  'cert.iso45001.benefit4': { pt: 'Melhoria contínua dos processos de segurança', en: 'Continuous improvement of safety processes' },
-  'cert.sgqf.title':        { pt: 'SGQF',                en: 'SGQF' },
-  'cert.sgqf.desc':         { pt: 'Sistema de Gestão da Qualidade em Fornecimento, garantindo conformidade com os padrões exigidos pelas grandes indústrias brasileiras.', en: 'Supply Quality Management System, ensuring compliance with standards required by major Brazilian industries.' },
-  'cert.sgqf.benefit1':     { pt: 'Garantia de fornecimento com qualidade', en: 'Quality supply assurance' },
-  'cert.sgqf.benefit2':     { pt: 'Processos padronizados e consistentes', en: 'Standardized and consistent processes' },
-  'cert.sgqf.benefit3':     { pt: 'Rastreabilidade completa dos materiais', en: 'Full material traceability' },
-  'cert.sgqf.benefit4':     { pt: 'Qualificação para grandes projetos industriais', en: 'Qualification for large industrial projects' },
-  'cert.iso9001.title':     { pt: 'ISO 9001:2015',      en: 'ISO 9001:2015' },
-  'cert.iso9001.desc':      { pt: 'Certificação para Sistemas de Gestão da Qualidade, atestando nosso compromisso com a excelência em processos e satisfação do cliente.', en: 'Certification for Quality Management Systems, attesting to our commitment to process excellence and customer satisfaction.' },
-  'cert.iso9001.benefit1':  { pt: 'Padronização de processos', en: 'Process standardization' },
-  'cert.iso9001.benefit2':  { pt: 'Melhoria contínua',   en: 'Continuous improvement' },
-  'cert.iso9001.benefit3':  { pt: 'Aumento da satisfação do cliente', en: 'Increased customer satisfaction' },
-  'cert.iso9001.benefit4':  { pt: 'Redução de não-conformidades', en: 'Reduction of non-conformities' },
-  'cert.qualityBanner.title':{ pt: 'QUALIDADE CERTIFICADA', en: 'CERTIFIED QUALITY' },
-  'cert.qualityBanner.desc': { pt: 'Nossas certificações demonstram nosso compromisso com a excelência, garantindo aos nossos clientes que todos os serviços são executados seguindo os mais rigorosos padrões internacionais de qualidade e segurança.', en: 'Our certifications demonstrate our commitment to excellence, ensuring that all services are performed following the most rigorous international quality and safety standards.' },
+  'cert.title':             { pt: 'NOSSAS CERTIFICAÇÕES', en: 'OUR CERTIFICATIONS', zh: '我们的认证' },
+  'cert.subtitle':          {
+    pt: 'Comprometidos com a excelência, mantemos as mais importantes certificações do setor, garantindo qualidade e segurança em todos os nossos serviços.',
+    en: 'Committed to excellence, we maintain the most important certifications in the sector, ensuring quality and safety in all our services.',
+    zh: '我们致力卓越，保持行业最重要的认证，确保所有服务的质量与安全。'
+  },
+  'cert.iso45001.title':    { pt: 'ISO 45001:2018',      en: 'ISO 45001:2018',    zh: 'ISO 45001:2018' },
+  'cert.iso45001.desc':     {
+    pt: 'Certificação internacional para Sistemas de Gestão de Saúde e Segurança Ocupacional, demonstrando nosso compromisso com a segurança dos colaboradores.',
+    en: 'International certification for Occupational Health and Safety Management Systems, demonstrating our commitment to employee safety.',
+    zh: '职业健康与安全管理体系国际认证，体现我们对员工安全的承诺。'
+  },
+  'cert.iso45001.benefit1': { pt: 'Ambiente de trabalho mais seguro', en: 'Safer work environment', zh: '更安全的工作环境' },
+  'cert.iso45001.benefit2': { pt: 'Redução de acidentes de trabalho', en: 'Reduced workplace accidents', zh: '减少工伤事故' },
+  'cert.iso45001.benefit3': { pt: 'Conformidade com requisitos legais', en: 'Compliance with legal requirements', zh: '符合法律要求' },
+  'cert.iso45001.benefit4': { pt: 'Melhoria contínua dos processos de segurança', en: 'Continuous improvement of safety processes', zh: '安全流程的持续改进' },
+  'cert.sgqf.title':        { pt: 'SGQF',                en: 'SGQF',              zh: 'SGQF' },
+  'cert.sgqf.desc':         {
+    pt: 'Sistema de Gestão da Qualidade em Fornecimento, garantindo conformidade com os padrões exigidos pelas grandes indústrias brasileiras.',
+    en: 'Supply Quality Management System, ensuring compliance with standards required by major Brazilian industries.',
+    zh: '供应质量管理体系，确保符合巴西大型工业的标准要求。'
+  },
+  'cert.sgqf.benefit1':     { pt: 'Garantia de fornecimento com qualidade', en: 'Quality supply assurance', zh: '高质量供应保证' },
+  'cert.sgqf.benefit2':     { pt: 'Processos padronizados e consistentes', en: 'Standardized and consistent processes', zh: '流程标准化与一致性' },
+  'cert.sgqf.benefit3':     { pt: 'Rastreabilidade completa dos materiais', en: 'Full material traceability', zh: '材料的完整可追溯性' },
+  'cert.sgqf.benefit4':     { pt: 'Qualificação para grandes projetos industriais', en: 'Qualification for large industrial projects', zh: '大型工业项目资格认证' },
+  'cert.iso9001.title':     { pt: 'ISO 9001:2015',      en: 'ISO 9001:2015',    zh: 'ISO 9001:2015' },
+  'cert.iso9001.desc':      {
+    pt: 'Certificação para Sistemas de Gestão da Qualidade, atestando nosso compromisso com a excelência em processos e satisfação do cliente.',
+    en: 'Certification for Quality Management Systems, attesting to our commitment to process excellence and customer satisfaction.',
+    zh: '质量管理体系认证，证明我们对流程卓越和客户满意的承诺。'
+  },
+  'cert.iso9001.benefit1':  { pt: 'Padronização de processos', en: 'Process standardization', zh: '流程标准化' },
+  'cert.iso9001.benefit2':  { pt: 'Melhoria contínua',   en: 'Continuous improvement', zh: '持续改进' },
+  'cert.iso9001.benefit3':  { pt: 'Aumento da satisfação do cliente', en: 'Increased customer satisfaction', zh: '提高客户满意度' },
+  'cert.iso9001.benefit4':  { pt: 'Redução de não-conformidades', en: 'Reduction of non-conformities', zh: '减少不合格项' },
+  'cert.qualityBanner.title':{ pt: 'QUALIDADE CERTIFICADA', en: 'CERTIFIED QUALITY', zh: '认证质量' },  
+  'cert.qualityBanner.desc': {
+    pt: 'Nossas certificações demonstram nosso compromisso com a excelência, garantindo aos nossos clientes que todos os serviços são executados seguindo os mais rigorosos padrões internacionais de qualidade e segurança.',
+    en: 'Our certifications demonstrate our commitment to excellence, ensuring that all services are performed following the most rigorous international quality and safety standards.',
+    zh: '我们的认证彰显卓越承诺，确保所有服务遵循最严格的国际质量和安全标准。'
+  },
 
   // Clients
-  'clients.title':          { pt: 'NOSSOS CLIENTES',    en: 'OUR CLIENTS' },
-  'clients.subtitle':       { 
+  'clients.title':          { pt: 'NOSSOS CLIENTES',    en: 'OUR CLIENTS',       zh: '我们的客户' },
+  'clients.subtitle':       {
     pt: 'Temos o orgulho de atender as maiores empresas do Brasil, contribuindo para o sucesso de seus projetos e operações.',
-    en: 'We are proud to serve the largest companies in Brazil, contributing to the success of their projects and operations.'
+    en: 'We are proud to serve the largest companies in Brazil, contributing to the success of their projects and operations.',
+    zh: '我们自豪地为巴西最大公司提供服务，助力其项目与运营成功。'
   },
-  'clients.category.all':       { pt: 'TODOS OS CLIENTES',        en: 'ALL CLIENTS' },
-  'clients.category.oilgas':    { pt: 'ÓLEO E GÁS',               en: 'OIL & GAS' },
-  'clients.category.offshore':  { pt: 'ESTALEIROS E OFFSHORE',    en: 'SHIPYARDS & OFFSHORE' },
-  'clients.category.steel':     { pt: 'SIDERURGIA',               en: 'STEEL' },
-  'clients.category.mining':    { pt: 'MINERAÇÃO',                en: 'MINING' },
-  'clients.category.pulp':      { pt: 'PAPEL E CELULOSE',         en: 'PULP & PAPER' },
-  'clients.showing':            { pt: 'Mostrando',                 en: 'Showing' },
-  'clients.of':                 { pt: 'de',                       en: 'of' },
-  'clients.clients':            { pt: 'clientes',                 en: 'clients' },
+  'clients.category.all':       { pt: 'TODOS OS CLIENTES',        en: 'ALL CLIENTS',        zh: '所有客户' },
+  'clients.category.oilgas':    { pt: 'ÓLEO E GÁS',               en: 'OIL & GAS',          zh: '石油与天然气' },
+  'clients.category.offshore':  { pt: 'ESTALEIROS E OFFSHORE',    en: 'SHIPYARDS & OFFSHORE', zh: '船厂与海上工程' },
+  'clients.category.steel':     { pt: 'SIDERURGIA',               en: 'STEEL',               zh: '钢铁' },
+  'clients.category.mining':    { pt: 'MINERAÇÃO',                en: 'MINING',              zh: '采矿' },
+  'clients.category.pulp':      { pt: 'PAPEL E CELULOSE',         en: 'PULP & PAPER',        zh: '纸浆与造纸' },
+  'clients.showing':            { pt: 'Mostrando',                 en: 'Showing',             zh: '显示' },
+  'clients.of':                 { pt: 'de',                       en: 'of',                  zh: '共' },
+  'clients.clients':            { pt: 'clientes',                 en: 'clients',             zh: '客户' },
 
   // Contact
-  'contact.title':                { pt: 'ENTRE EM CONTATO', en: 'CONTACT US' },
-  'contact.subtitle':             { pt: 'Estamos prontos para atender suas necessidades. Entre em contato conosco e conheça nossas soluções personalizadas.', en: 'We are ready to meet your needs. Contact us and discover our customized solutions.' },
-  'contact.form.title':           { pt: 'Envie-nos uma mensagem', en: 'Send us a message' },
-  'contact.form.send':            { pt: 'Enviar mensagem',        en: 'Send message' },
-  'contact.form.sending':         { pt: 'Enviando...',            en: 'Sending...' },
-  'contact.form.name':            { pt: 'Nome completo',          en: 'Full name' },
-  'contact.form.email':           { pt: 'E-mail',                 en: 'Email' },
-  'contact.form.phone':           { pt: 'Telefone',               en: 'Phone' },
-  'contact.form.message':         { pt: 'Mensagem',               en: 'Message' },
-  'contact.form.placeholder.name':    { pt: 'Seu nome',          en: 'Your name' },
-  'contact.form.placeholder.email':   { pt: 'seu@email.com',    en: 'your@email.com' },
-  'contact.form.placeholder.phone':   { pt: '(00) 00000-0000',  en: '(000) 000-000-0000' },
-  'contact.form.placeholder.message': { pt: 'Como podemos ajudar?', en: 'How can we help?' },
+  'contact.title':                { pt: 'ENTRE EM CONTATO', en: 'CONTACT US',                 zh: '联系我们' },
+  'contact.subtitle':             {
+    pt: 'Estamos prontos para atender suas necessidades. Entre em contato conosco e conheça nossas soluções personalizadas.',
+    en: 'We are ready to meet your needs. Contact us and discover our customized solutions.',
+    zh: '我们随时准备满足您的需求。联系我们，了解个性化解决方案。'
+  },
+  'contact.form.title':           { pt: 'Envie-nos uma mensagem', en: 'Send us a message',       zh: '发送消息给我们' },
+  'contact.form.send':            { pt: 'Enviar mensagem',        en: 'Send message',            zh: '发送消息' },
+  'contact.form.sending':         { pt: 'Enviando...',            en: 'Sending...',             zh: '发送中…' },
+  'contact.form.name':            { pt: 'Nome completo',          en: 'Full name',              zh: '全名' },
+  'contact.form.email':           { pt: 'E-mail',                 en: 'Email',                  zh: '电子邮件' },
+  'contact.form.phone':           { pt: 'Telefone',               en: 'Phone',                  zh: '电话' },
+  'contact.form.message':         { pt: 'Mensagem',               en: 'Message',                zh: '留言' },
+  'contact.form.placeholder.name':    { pt: 'Seu nome',          en: 'Your name',              zh: '您的姓名' },
+  'contact.form.placeholder.email':   { pt: 'seu@email.com',    en: 'your@email.com',        zh: '您的邮箱' },
+  'contact.form.placeholder.phone':   { pt: '(00) 00000-0000',  en: '(000) 000-000-0000',    zh: '（000）000-000-0000' },
+  'contact.form.placeholder.message': { pt: 'Como podemos ajudar?', en: 'How can we help?',     zh: '我们如何帮助您？' },
 
-  'contact.info.title':         { pt: 'Informações de contato',       en: 'Contact information' },
-  'contact.info.addressLabel':  { pt: 'Endereço',                      en: 'Address' },
-  'contact.info.address':       { pt: 'Av. Talma Rodrigues Ribeiro, 1891\nCivit II, Serra – ES', en: 'Av. Talma Rodrigues Ribeiro, 1891\nCivit II, Serra – ES' },
-  'contact.info.phoneLabel':    { pt: 'Telefone',                      en: 'Phone' },
-  'contact.info.phone1':        { pt: '(27) 3182-2857',               en: '(27) 3182-2857' },
-  'contact.info.phone2':        { pt: '(27) 99911-9003',              en: '(27) 99911-9003' },
-  'contact.info.phone3':        { pt: '(27) 3182-2883',               en: '(27) 3182-2883' },
-  'contact.info.emailLabel':    { pt: 'E-mail',                        en: 'E-mail' },
-  'contact.info.email1':        { pt: 'rh@bng-es.com.br',             en: 'rh@bng-es.com.br' },
-  'contact.info.email2':        { pt: 'oportunidades@bng-es.com.br',  en: 'oportunidades@bng-es.com.br' },
-  'contact.info.email3':        { pt: 'comercial@bngmetalmecanica.com.br', en: 'comercial@bngmetalmecanica.com.br' },
+  'contact.info.title':         { pt: 'Informações de contato',       en: 'Contact information',   zh: '联系信息' },
+  'contact.info.addressLabel':  { pt: 'Endereço',                      en: 'Address',              zh: '地址' },
+  'contact.info.address':       {
+    pt: 'Av. Talma Rodrigues Ribeiro, 1891\nCivit II, Serra – ES',
+    en: 'Av. Talma Rodrigues Ribeiro, 1891\nCivit II, Serra – ES',
+    zh: '巴西塞拉市塔尔玛·罗德里格斯·里贝罗大道1891号 Civit II'
+  },
+  'contact.info.phoneLabel':    { pt: 'Telefone',                      en: 'Phone',                zh: '电话' },
+  'contact.info.phone1':        { pt: '(27) 3182-2857',               en: '(27) 3182-2857',       zh: '（27）3182-2857' },
+  'contact.info.phone2':        { pt: '(27) 99911-9003',              en: '(27) 99911-9003',      zh: '（27）99911-9003' },
+  'contact.info.phone3':        { pt: '(27) 3182-2883',               en: '(27) 3182-2883',       zh: '（27）3182-2883' },
+  'contact.info.emailLabel':    { pt: 'E-mail',                        en: 'E-mail',               zh: '电子邮件' },
+  'contact.info.email1':        { pt: 'rh@bng-es.com.br',             en: 'rh@bng-es.com.br',      zh: 'rh@bng-es.com.br' },
+  'contact.info.email2':        { pt: 'oportunidades@bng-es.com.br',  en: 'oportunidades@bng-es.com.br', zh: 'oportunidades@bng-es.com.br' },
+  'contact.info.email3':        { pt: 'comercial@bng-es.com.br',      en: 'comercial@bng-es.com.br',     zh: 'comercial@bng-es.com.br' },
 
   // Equipment
-  'equip.title':                { pt: 'Nosso Parque de Equipamentos', en: 'Our Equipment Park' },
-  'equip.category.cranes':     { pt: 'Guindastes e Munck',           en: 'Cranes and Munck' },
-  'equip.category.transport':  { pt: 'Transporte',                   en: 'Transport' },
+  'equip.title':                { pt: 'Nosso Parque de Equipamentos', en: 'Our Equipment Park',   zh: '我们的设备' },
+  'equip.category.cranes':     { pt: 'Guindastes e Munck',           en: 'Cranes and Munck',     zh: '起重机与吊车' },
+  'equip.category.transport':  { pt: 'Transporte',                   en: 'Transport',            zh: '运输' },
 
-  // Equipamentos
-  'equipment.crane110t':        { pt: 'Guindaste 110t',         en: 'Crane 110t' },
-  'equipment.munck15t':         { pt: 'Munck 15t',              en: 'Munck 15t' },
-  'equipment.munck10t':         { pt: 'Munck 10t',              en: 'Munck 10t' },
-  'equipment.unidadeMovel':     { pt: 'Unidade Móvel',         en: 'Mobile Unit' },
-  'equipment.carretaExtensiva': { pt: 'Carreta Extensiva',     en: 'Extendable Trailer' },
-  'equipment.carretaConvencional': { pt: 'Carreta Convencional', en: 'Conventional Trailer' },
-  'equipment.cavalosMecanicos': { pt: 'Cavalos Mecânicos',     en: 'Truck Tractors' },
-  'equipment.pranchas':         { pt: 'Pranchas',              en: 'Flatbeds' },
+  'equipment.crane110t':        { pt: 'Guindaste 110t',         en: 'Crane 110t',            zh: '110吨起重机' },
+  'equipment.munck15t':         { pt: 'Munck 15t',              en: 'Munck 15t',             zh: '15吨吊车' },
+  'equipment.munck10t':         { pt: 'Munck 10t',              en: 'Munck 10t',             zh: '10吨吊车' },
+  'equipment.unidadeMovel':     { pt: 'Unidade Móvel',         en: 'Mobile Unit',           zh: '移动单元' },
+  'equipment.carretaExtensiva': { pt: 'Carreta Extensiva',     en: 'Extendable Trailer',    zh: '可伸缩挂车' },
+  'equipment.carretaConvencional': { pt: 'Carreta Convencional', en: 'Conventional Trailer', zh: '普通挂车' },
+  'equipment.cavalosMecanicos': { pt: 'Cavalos Mecânicos',     en: 'Truck Tractors',        zh: '牵引车' },
+  'equipment.pranchas':         { pt: 'Pranchas',              en: 'Flatbeds',              zh: '平板车' },
 
-  //Footer
-  'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA'},
-  'footer.links':               { pt: 'Links',                  en: 'Links'},
-  'footer.services':            { pt: 'Serviços',               en: 'Serviços'},
+  // Footer
+  'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA',   zh: 'BNG 金属机械' },
+  'footer.links':               { pt: 'Links',                  en: 'Links',               zh: '链接' },
+  'footer.services':            { pt: 'Serviços',               en: 'Services',            zh: '服务' },
 
-  //infraestructure
-  'infrastructure.title':      {pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en:'BNG METALMECÂNICA INFRASTRUCTURE'},
-  'infrastructure.subtitle':   {pt: 'Infraestrutura com mais de 9.000 m² construídos em um terreno de 17.500 m², com capacidade para processar até 300 toneladas/mês em estruturas metálicas, caldeiraria e usinagem.', en:'Over 9,000 m² of built-up area on a 17,500 m² site, with monthly capacity of up to 300 tons in metal structures, boilerworks, and machining operations.'},
+  // Infrastructure
+  'infrastructure.title':      { pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en: 'BNG METALMECÂNICA INFRASTRUCTURE', zh: 'BNG 金属机械基础设施' },
+  'infrastructure.subtitle':   {
+    pt: 'Infraestrutura com mais de 9.000 m² construídos em um terreno de 17.500 m², com capacidade para processar até 300 toneladas/mês em estruturas metálicas, caldeiraria e usinagem.',
+    en: 'Over 9,000 m² of built-up area on a 17,500 m² site, with monthly capacity of up to 300 tons in metal structures, boilerworks, and machining operations.',
+    zh: '超过9,000平方米的建设面积，位于17,500平方米场地，可实现每月处理300吨金属结构、锅炉制作和机加工。'
+  },
 };
 
 interface LanguageContextType {
-  language: 'pt' | 'en';
+  language: 'pt' | 'en' | 'zh';
   translate: (key: string) => string;
-  changeLanguage: (lang: 'pt' | 'en') => void;
+  changeLanguage: (lang: 'pt' | 'en' | 'zh') => void;
 }
 
 export const LanguageContext = createContext<LanguageContextType>({
@@ -177,9 +287,9 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<'pt' | 'en'>(() => {
+  const [language, setLanguage] = useState<'pt' | 'en' | 'zh'>(() => {
     const saved = localStorage.getItem('preferredLanguage');
-    return saved === 'en' ? 'en' : 'pt';
+    return saved === 'en' || saved === 'zh' ? saved : 'pt';
   });
 
   const translate = (key: string): string => {
@@ -191,7 +301,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     return entry[language];
   };
 
-  const changeLanguage = (lang: 'pt' | 'en') => {
+  const changeLanguage = (lang: 'pt' | 'en' | 'zh') => {
     setLanguage(lang);
     localStorage.setItem('preferredLanguage', lang);
   };
@@ -199,7 +309,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   useEffect(() => {
     const handleStorage = (e: StorageEvent) => {
       if (e.key === 'preferredLanguage') {
-        setLanguage(e.newValue === 'en' ? 'en' : 'pt');
+        const val = e.newValue;
+        if (val === 'en' || val === 'zh') setLanguage(val);
+        else setLanguage('pt');
       }
     };
     window.addEventListener('storage', handleStorage);

@@ -1,37 +1,46 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { LanguageContext } from '../../contexts/LanguageContext';
-import BrazilFlag from '../img/brazil-flag.svg';
-import USAFlag from '../img/usa.png';
+import BrazilFlag from '../img/brazil-flag.png';
+import USAFlag from  '../img/usa.png';
+import ChinaFlag from '../img/china.png';
 
-const LanguageSelector = () => {
+// LanguageSelector.tsx
+const LanguageSelector: React.FC = () => {
   const { language, changeLanguage } = useContext(LanguageContext);
+
+  const buttons = [
+    { code: 'pt', label: 'Português', flag: BrazilFlag, aria: 'Português' },
+    { code: 'en', label: 'English', flag: USAFlag, aria: 'English' },
+    { code: 'zh', label: '中文', flag: ChinaFlag, aria: '中文' },
+  ] as const;
 
   return (
     <div className="flex space-x-2">
-      <button
-        onClick={() => changeLanguage('pt')}
-        className={`w-8 h-6 rounded overflow-hidden border ${language === 'pt' ? 'border-white opacity-100 scale-110' : 'border-transparent opacity-70 hover:opacity-100'} transition-all duration-300`}
-        aria-label="Português"
-      >
-        <img 
-          src={BrazilFlag} 
-          alt="Bandeira do Brasil" 
-          className="w-full h-full object-cover"
-        />
-      </button>
-      <button
-        onClick={() => changeLanguage('en')}
-        className={`w-8 h-6 rounded overflow-hidden border ${language === 'en' ? 'border-white opacity-100 scale-110' : 'border-transparent opacity-70 hover:opacity-100'} transition-all duration-300`}
-        aria-label="English"
-      >
-        <img 
-          src={USAFlag} 
-          alt="USA Flag" 
-          className="w-full h-full object-cover"
-        />
-      </button>
+      {buttons.map(({ code, flag, aria }) => (
+        <button
+          key={code}
+          onClick={() => changeLanguage(code)}
+          className={
+            `w-8 h-6 rounded overflow-hidden border transition-all duration-300 ` +
+            (language === code
+              ? 'border-white opacity-100 scale-110'
+              : 'border-transparent opacity-70 hover:opacity-100')
+          }
+          aria-label={aria}
+        >
+          <img
+            src={flag}
+            alt={`${aria} flag`}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // fallback caso não carregue
+              (e.currentTarget as HTMLImageElement).src = flag;
+            }}
+          />
+        </button>
+      ))}
     </div>
   );
 };
 
-export default LanguageSelector;
+export default React.memo(LanguageSelector);

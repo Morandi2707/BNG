@@ -117,9 +117,7 @@ const ClientCard = memo(function _ClientCard({
         <img
           src={client.logo}
           alt={client.name}
-          className={`max-h-20 object-contain transition-filter duration-300
-            ${hov ? 'filter-none' : 'filter grayscale hover:filter-none'}
-          `}
+          className="max-h-20 object-contain transition-transform duration-300"
         />
         <div className={`
           absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-black text-white rounded
@@ -182,7 +180,6 @@ export default function Clients() {
   };
 
   const totalPages = Math.ceil(filtered.length / perSlide);
-  const indicatorCount = totalPages; // agora mostra todos os dots
 
   return (
     <section id="clients" className="py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
@@ -193,6 +190,7 @@ export default function Clients() {
           className="text-center mb-12"
         />
 
+        {/* Filtros de categoria */}
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
           {categoryKeys.map(key => (
             <button
@@ -210,6 +208,7 @@ export default function Clients() {
           ))}
         </div>
 
+        {/* Carrossel de clientes */}
         <div className="relative group">
           <ArrowButton direction="left"  onClick={() => scrollByPage('left')}  disabled={!canScrollLeft}/>
           <div
@@ -229,9 +228,9 @@ export default function Clients() {
           <ArrowButton direction="right" onClick={() => scrollByPage('right')} disabled={!canScrollRight}/>
         </div>
 
-        {/* indicadores clicáveis */}
+        {/* Indicadores clicáveis */}
         <div className="flex justify-center mt-6 space-x-2">
-          {Array.from({ length: indicatorCount }).map((_, i) => {
+          {Array.from({ length: totalPages }).map((_, i) => {
             const active = i === currentPage;
             return (
               <button
