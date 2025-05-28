@@ -1,18 +1,67 @@
-// src/components/sections/Infrastructure.tsx
-
 import React, {
   useState,
   useEffect,
   useRef,
   useCallback,
   useMemo,
+  useContext,
 } from 'react';
-import { useContext } from 'react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import ArrowButton from '../ui/ArrowButton';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
+// Hook: detecta quando o elemento entra na viewport
+function useOnScreen<T extends Element>(options?: IntersectionObserverInit) {
+  const ref = useRef<T>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // dispara apenas uma vez
+        }
+      },
+      { threshold: 0.5, ...options }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [ref, options]);
+
+  return { ref, isVisible };
+}
+
+// Componente: contador animado quando visível
+type CountUpProps = { end: number; duration?: number; suffix?: string };
+function CountUpOnView({ end, duration = 1500, suffix = '' }: CountUpProps) {
+  const { ref, isVisible } = useOnScreen<HTMLDivElement>();
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    let start: number | null = null;
+
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      setValue(Math.floor(progress * end));
+      if (progress < 1) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  }, [isVisible, end, duration]);
+
+  return (
+    <div ref={ref} className="text-5xl sm:text-6xl font-extrabold text-blue-900">
+      {value.toLocaleString()} {suffix}
+    </div>
+  );
+}
+
+// Imagens de infraestrutura
 const infraImages = [
   '/images/infra1.jpg',
   '/images/infra2.jpg',
@@ -24,6 +73,7 @@ const infraImages = [
 
 type ImageItem = { id: string; src: string };
 
+// Componente Principal
 export default function Infrastructure() {
   const { language, translate } = useContext(LanguageContext);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -32,6 +82,7 @@ export default function Infrastructure() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
+  // Hook interno para largura da janela
   function useWindowWidth() {
     const [w, setW] = useState(
       typeof window === 'undefined' ? 0 : window.innerWidth
@@ -101,20 +152,19 @@ export default function Infrastructure() {
           className="text-black"
         />
 
-        {/* Grandes números */}
+        {/* Grandes números com contador */}
         <div className="mt-8 mb-12 flex flex-col items-center justify-center space-y-6 sm:space-y-0 sm:flex-row sm:space-x-16">
           <div className="text-center">
-            <h2 className="text-5xl sm:text-6xl font-extrabold text-blue-900">
-              17 500 m²
-            </h2>
+            <CountUpOnView end={17500} suffix="m²" />
             <p className="text-gray-600 text-lg sm:text-xl mt-1">
               {language === 'pt' ? 'Área total' : 'Total Area'}
             </p>
           </div>
           <div className="text-center">
-            <h2 className="text-5xl sm:text-6xl font-extrabold text-blue-900">
-              {language === 'pt' ? '300 toneladas/mês' : '300 tons/month'}
-            </h2>
+            <CountUpOnView
+              end={300}
+              suffix={language === 'pt' ? ' toneladas/mês' : ' tons/month'}
+            />
             <p className="text-gray-600 text-lg sm:text-xl mt-1">
               {language === 'pt' ? 'Capacidade de processamento' : 'Processing Capacity'}
             </p>
@@ -156,12 +206,11 @@ export default function Infrastructure() {
           />
         </div>
 
-        {/* Indicadores de página: removido o segundo dot */}
+        {/* Indicadores de página */}
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: totalPages })
-            .filter((_, i) => i !== 1) // <— remove o dot de índice 1
+            .filter((_, i) => i !== 1)
             .map((_, i) => {
-              // precisamos recalcular a página alvo: se i>=1, então original index i+1
               const originalIndex = i >= 1 ? i + 1 : i;
               const active = originalIndex === currentPage;
               return (
