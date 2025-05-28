@@ -9,7 +9,7 @@ import { LanguageContext } from '../../contexts/LanguageContext';
 import oilImg       from '../img/oil.jpg';
 import offshoreImg  from '../img/offshore.jpg';
 import steelImg     from '../img/steel.jpg';
-import miningImg    from '../img/mining.webp';
+import miningImg    from '../img/Mining.png';
 
 // Chaves tipadas para garantir consistência
 const industryKeys = ['oil', 'offshore', 'steel', 'mining'] as const;
