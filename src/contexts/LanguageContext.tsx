@@ -76,6 +76,7 @@ export const TRANSLATIONS: Translations = {
     zh: '为各行业制造和组装金属结构，提供定制化设计与高强度。'
   },
   'services.caldeiraria':       { pt: 'Caldeiraria',       en: 'Boilermaking',     zh: '锅炉制作' },
+  'services.boilermaking':       { pt: 'Caldeiraria',       en: 'Boilermaking',     zh: '锅炉制作' },
   'services.caldeiraria.desc':  {
     pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.',
     en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.',
