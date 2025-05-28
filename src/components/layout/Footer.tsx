@@ -1,29 +1,41 @@
+// src/components/layout/Footer.tsx
 import { useContext } from 'react';
-import { Linkedin, Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import {
+  Linkedin,
+  Instagram,
+  Facebook,
+  MapPin,
+  Phone,
+  Mail
+} from 'lucide-react';
 import Container from '../ui/Container';
 import { LanguageContext } from '../../contexts/LanguageContext';
-import LogoBNG from '../img/LOGO-BNG-SEM-NOME.png'; // ajuste a extensão se necessário
+import LogoBNG from '../img/LOGO-BNG-SEM-NOME.png';
+import EGLogo from '../img/EG-logo.png'; // ajuste o caminho para a sua logo da EG
 
 const Footer = () => {
   const { translate } = useContext(LanguageContext);
   const year = new Date().getFullYear();
 
   const social = [
-    { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/company/bng-metalmec%C3%A2nica-ltda?originalSubdomain=br' },
+    {
+      icon: <Linkedin size={20} />,
+      href: 'https://www.linkedin.com/company/bng-metalmec%C3%A2nica-ltda?originalSubdomain=br'
+    },
     { icon: <Instagram size={20} />, href: 'https://www.instagram.com/bngmetalmecanica/' },
-    { icon: <Facebook size={20} />, href: 'http://www.facebook.com/bngmetalmecanica' },
+    { icon: <Facebook size={20} />, href: 'http://www.facebook.com/bngmetalmecanica' }
   ];
 
   const phones = [
     translate('contact.info.phone1'),
     translate('contact.info.phone2'),
-    translate('contact.info.phone3'),
+    translate('contact.info.phone3')
   ];
 
   const emails = [
     translate('contact.info.email1'),
     translate('contact.info.email2'),
-    translate('contact.info.email3'),
+    translate('contact.info.email3')
   ];
 
   return (
@@ -31,11 +43,7 @@ const Footer = () => {
       <Container className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Tagline */}
         <div>
-          <img
-            src={LogoBNG}
-            alt="Logo BNG"
-            className="mb-4 w-32"
-          />
+          <img src={LogoBNG} alt="Logo BNG" className="mb-4 w-32" />
           <p className="text-gray-300 mb-4">{translate('footer.tagline')}</p>
           <div className="flex space-x-4">
             {social.map((s, i) => (
@@ -56,13 +64,15 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-4">{translate('footer.links')}</h3>
           <ul className="space-y-2">
-            {['home','about','services','certifications','equipment','clients','contact'].map(id => (
-              <li key={id}>
-                <a href={`#${id}`} className="text-gray-300 hover:text-white">
-                  {translate(`nav.${id}`)}
-                </a>
-              </li>
-            ))}
+            {['home', 'about', 'services', 'certifications', 'equipment', 'clients', 'contact'].map(
+              (id) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-gray-300 hover:text-white">
+                    {translate(`nav.${id}`)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
 
@@ -70,7 +80,7 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-4">{translate('footer.services')}</h3>
           <ul className="space-y-2 text-gray-300">
-            {['structures','boilermaking','machining','maintenance'].map(key => (
+            {['structures', 'boilermaking', 'machining', 'maintenance'].map((key) => (
               <li key={key}>{translate(`services.${key}`)}</li>
             ))}
           </ul>
@@ -94,7 +104,9 @@ const Footer = () => {
               <div>
                 <div className="font-bold">{translate('contact.info.phoneLabel')}</div>
                 <div className="space-y-1">
-                  {phones.map((p, i) => <div key={i}>{p}</div>)}
+                  {phones.map((p, i) => (
+                    <div key={i}>{p}</div>
+                  ))}
                 </div>
               </div>
             </li>
@@ -116,9 +128,28 @@ const Footer = () => {
         </div>
       </Container>
 
-      {/* Copyright */}
+      {/* Desenvolvido por + logo EG */}
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-        © {year} BNG Metalmecânica. Todos os direitos reservados.
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <span className="text-sm">{translate('footer.developedBy')}</span>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transform transition hover:scale-110 hover:shadow-lg"
+            title="EG Arquitetura de Soluções"
+          >
+            <img
+              src={EGLogo}
+              alt="EG Arquitetura de Soluções"
+              className="h-20 object-contain"
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="text-center text-gray-400 text-xs mt-4">
+        {translate('footer.copyright').replace('{{year}}', String(year))}
       </div>
     </footer>
   );
