@@ -128,28 +128,10 @@ const Footer = () => {
         </div>
       </Container>
 
-      {/* Desenvolvido por + logo EG */}
-      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <span className="text-sm">{translate('footer.developedBy')}</span>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block transform transition hover:scale-110 hover:shadow-lg"
-            title="EG Arquitetura de Soluções"
-          >
-            <img
-              src={EGLogo}
-              alt="EG Arquitetura de Soluções"
-              className="h-20 object-contain"
-            />
-          </a>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="text-center text-gray-400 text-xs mt-4">
+      {/* Copyright + Logo EG */}
+      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 flex items-center justify-center gap-2">
         {translate('footer.copyright').replace('{{year}}', String(year))}
+        <img src={EGLogo} alt="EG Arquitetura de Soluções" className="inline-block h-8" />
       </div>
     </footer>
   );

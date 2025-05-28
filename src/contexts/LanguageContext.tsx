@@ -261,8 +261,7 @@ export const TRANSLATIONS: Translations = {
   'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA',   zh: 'BNG METALMECÂNICA' },
   'footer.links':               { pt: 'Links',                  en: 'Links',               zh: '链接' },
   'footer.services':            { pt: 'Serviços',               en: 'Services',            zh: '服务' },
-  'footer.copyright': {pt: '© {{year}} BNG Metalmecânica. Todos os direitos reservados. ', en: '© {{year}} BNG Metalmecânica. All rights reserved.', zh: '© {{year}} BNG Metalmecânica。保留所有权利.',},
-  'footer.developedBy': {pt: 'Desenvolvido por', en: 'Developed by', zh: '开发者'},
+  'footer.copyright': {pt: '© {{year}} BNG Metalmecânica. Todos os direitos reservados. Desenvolvido por EG Arquitetura de Soluções Digitais.', en: '© {{year}} BNG Metalmecânica. All rights reserved. Developed by EG Arquitetura de Soluções Digitais.', zh: '© {{year}} BNG Metalmecânica。保留所有权利。由 EG Arquitetura de Soluções Digitais 开发',},
 
   // Infrastructure
   'infrastructure.title':      { pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en: 'BNG METALMECÂNICA INFRASTRUCTURE', zh: '"BNG METALMECÂNICA 基础设施' },
