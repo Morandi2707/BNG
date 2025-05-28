@@ -2,9 +2,8 @@ import { useState, useContext } from 'react';
 import { Menu, X } from 'lucide-react';
 import Container from '../ui/Container';
 import logoBNG from '../img/LOGO-BNG-SEM-NOME.png';
-import brazilFlag from '../img/brazil-flag.png';
-import usaFlag from '../img/usa.png';
 import { LanguageContext } from '../../contexts/LanguageContext';
+import LanguageSelector from '../ui/LanguageSelector';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -12,7 +11,7 @@ interface HeaderProps {
 
 const Header = ({ isScrolled }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { translate, language, changeLanguage } = useContext(LanguageContext);
+  const { translate } = useContext(LanguageContext);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -27,8 +26,6 @@ const Header = ({ isScrolled }: HeaderProps) => {
     { key: 'clients', href: '#clients' },
     { key: 'contact', href: '#contact' },
   ];
-
-  const currentFlag = language === 'pt' ? brazilFlag : usaFlag;
 
   return (
     <header
@@ -54,15 +51,9 @@ const Header = ({ isScrolled }: HeaderProps) => {
             ))}
           </nav>
 
-          {/* Botão de idioma */}
+          {/* Seleção de idioma desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button
-              onClick={() => changeLanguage(language === 'pt' ? 'en' : 'pt')}
-              className="flex items-center space-x-2 px-3 py-1 border border-white rounded text-white hover:bg-white hover:text-[#042c70] transition text-sm"
-            >
-              <img src={currentFlag} alt="Idioma" className="w-5 h-5" />
-              <span>{language.toUpperCase()}</span>
-            </button>
+            <LanguageSelector />
           </div>
 
           {/* Botão de menu mobile */}
@@ -92,17 +83,10 @@ const Header = ({ isScrolled }: HeaderProps) => {
                 </a>
               ))}
 
-              {/* Botão de idioma no mobile */}
-              <button
-                onClick={() => {
-                  changeLanguage(language === 'pt' ? 'en' : 'pt');
-                  setMobileMenuOpen(false);
-                }}
-                className="flex items-center justify-center space-x-2 py-2 border border-white rounded text-white hover:bg-white hover:text-[#042c70] transition text-sm"
-              >
-                <img src={currentFlag} alt="Idioma" className="w-5 h-5" />
-                <span>{language.toUpperCase()}</span>
-              </button>
+              {/* Seleção de idioma mobile */}
+              <div className="flex justify-center py-2">
+                <LanguageSelector />
+              </div>
             </div>
           </Container>
         </div>

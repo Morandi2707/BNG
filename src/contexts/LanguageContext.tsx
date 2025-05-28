@@ -21,7 +21,7 @@ export const TRANSLATIONS: Translations = {
   'button.contact':     { pt: 'Fale Conosco',      en: 'Contact Us',        zh: '联系我们' },
 
   // Hero
-  'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA', zh: 'BNG 金属机械' },
+  'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA', zh: 'BNG METALMECÂNICA' },
   'hero.subtitle':        {
     pt: 'Soluções metalmecânicas de alta qualidade para as maiores empresas do Brasil.',
     en: 'High-quality metalworking solutions for the largest companies in Brazil.',
@@ -257,12 +257,12 @@ export const TRANSLATIONS: Translations = {
   'equipment.pranchas':         { pt: 'Pranchas',              en: 'Flatbeds',              zh: '平板车' },
 
   // Footer
-  'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA',   zh: 'BNG 金属机械' },
+  'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA',   zh: 'BNG METALMECÂNICA' },
   'footer.links':               { pt: 'Links',                  en: 'Links',               zh: '链接' },
   'footer.services':            { pt: 'Serviços',               en: 'Services',            zh: '服务' },
 
   // Infrastructure
-  'infrastructure.title':      { pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en: 'BNG METALMECÂNICA INFRASTRUCTURE', zh: 'BNG 金属机械基础设施' },
+  'infrastructure.title':      { pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en: 'BNG METALMECÂNICA INFRASTRUCTURE', zh: '"BNG METALMECÂNICA 基础设施' },
   'infrastructure.subtitle':   {
     pt: 'Infraestrutura com mais de 9.000 m² construídos em um terreno de 17.500 m², com capacidade para processar até 300 toneladas/mês em estruturas metálicas, caldeiraria e usinagem.',
     en: 'Over 9,000 m² of built-up area on a 17,500 m² site, with monthly capacity of up to 300 tons in metal structures, boilerworks, and machining operations.',
