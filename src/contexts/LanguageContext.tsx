@@ -23,9 +23,9 @@ export const TRANSLATIONS: Translations = {
   // Hero
   'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA', zh: 'BNG METALMECÂNICA' },
   'hero.subtitle':        {
-    pt: 'Soluções metalmecânicas de alta qualidade para as maiores empresas do Brasil.',
-    en: 'High-quality metalworking solutions for the largest companies in Brazil.',
-    zh: '为巴西最大公司提供高质量金属加工解决方案。'
+    pt: 'Soluções metalmecânicas de alta qualidade para as maiores empresas do mundo.',
+    en: 'High-quality metalworking solutions for the largest companies in the world.',
+    zh: '为世界顶级企业提供高品质金属机械解决方案。'
   },
   'hero.button.services': { pt: 'Conheça Nossos Serviços', en: 'Discover Our Services', zh: '了解我们的服务' },
   'hero.button.contact':  { pt: 'Entre em Contato',         en: 'Contact Us',          zh: '联系我们' },
