@@ -21,6 +21,12 @@ const Services = () => {
   const keys = ['caldeiraria', 'machining', 'maintenance', 'structures'] as const;
   const [activeKey, setActiveKey] = useState<string | null>(null);
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).id === 'modal-backdrop') {
+      setActiveKey(null);
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <Container>
@@ -65,7 +71,11 @@ const Services = () => {
 
         {/* Modal */}
         {activeKey && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div
+            id="modal-backdrop"
+            onClick={handleBackdropClick}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          >
             <div className="bg-white rounded-xl w-11/12 md:w-3/4 lg:w-1/2 shadow-lg overflow-hidden">
               <div className="relative h-56 w-full">
                 <img
