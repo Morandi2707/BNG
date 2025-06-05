@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import { LanguageContext } from '../../contexts/LanguageContext';
@@ -20,12 +20,36 @@ const Services = () => {
   const { translate } = useContext(LanguageContext);
   const keys = ['caldeiraria', 'machining', 'maintenance', 'structures'] as const;
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).id === 'modal-backdrop') {
-      setActiveKey(null);
+      closeModal();
     }
   };
+
+  const openModal = (key: string) => {
+    setActiveKey(key);
+    requestAnimationFrame(() => setIsModalVisible(true));
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setTimeout(() => setActiveKey(null), 200);
+  };
+
+  // Prevenir scroll do body quando modal estiver aberto
+  useEffect(() => {
+    if (activeKey) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeKey]);
 
   return (
     <section id="services" className="py-20 bg-gray-50">
@@ -59,8 +83,8 @@ const Services = () => {
                   {translate(`services.${key}.shortDesc`)}
                 </p>
                 <button
-                  onClick={() => setActiveKey(key)}
-                  className="mt-auto w-full py-2 bg-[#032F70] text-white rounded-md hover:bg-[#021F50] transition-colors text-sm font-medium"
+                  onClick={() => openModal(key)}
+                  className="mt-auto w-full py-2 bg-[#032F70] text-white rounded-md hover:bg-[#021F50] transition-colors duration-200 text-sm font-medium"
                 >
                   {translate('services.seeMore')}
                 </button>
@@ -74,9 +98,17 @@ const Services = () => {
           <div
             id="modal-backdrop"
             onClick={handleBackdropClick}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-200 ${
+              isModalVisible ? 'bg-opacity-50' : 'bg-opacity-0'
+            }`}
           >
-            <div className="bg-white rounded-xl w-11/12 md:w-3/4 lg:w-1/2 shadow-lg overflow-hidden">
+            <div 
+              className={`bg-white rounded-xl w-11/12 md:w-3/4 lg:w-1/2 shadow-lg overflow-hidden transition-all duration-200 transform ${
+                isModalVisible 
+                  ? 'scale-100 opacity-100' 
+                  : 'scale-95 opacity-0'
+              }`}
+            >
               <div className="relative h-56 w-full">
                 <img
                   src={images[activeKey]}
@@ -84,8 +116,8 @@ const Services = () => {
                   className="w-full h-full object-cover"
                 />
                 <button
-                  onClick={() => setActiveKey(null)}
-                  className="absolute top-4 right-4 text-white bg-[#032F70] bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition"
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 text-white bg-[#032F70] bg-opacity-80 p-2 rounded-full hover:bg-opacity-100 transition-all duration-200"
                 >
                   ×
                 </button>
@@ -99,8 +131,8 @@ const Services = () => {
                 </p>
                 <div className="mt-8 flex justify-center">
                   <button
-                    onClick={() => setActiveKey(null)}
-                    className="px-6 py-2 bg-[#032F70] text-white rounded-md hover:bg-[#021F50] transition-colors"
+                    onClick={closeModal}
+                    className="px-6 py-2 bg-[#032F70] text-white rounded-md hover:bg-[#021F50] transition-colors duration-200"
                   >
                     {translate('services.close')}
                   </button>
