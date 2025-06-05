@@ -69,31 +69,67 @@ export const TRANSLATIONS: Translations = {
     en: 'We offer complete metallurgy solutions for various industrial sectors, with qualified teams and modern equipment.',
     zh: '我们为各工业领域提供完整的冶金解决方案，拥有专业团队和现代化设备。'
   },
-  'services.structures':         { pt: 'Estruturas Metálicas', en: 'Metal Structures', zh: '金属结构' },
-  'services.structures.desc':    {
-    pt: 'Fabricação e montagem de estruturas metálicas para diversos setores industriais, com projetos personalizados e alta resistência.',
-    en: 'Manufacturing and assembly of metal structures for various industrial sectors, with customized projects and high resistance.',
-    zh: '为各行业制造和组装金属结构，提供定制化设计与高强度。'
-  },
   'services.caldeiraria':       { pt: 'Caldeiraria',       en: 'Boilermaking',     zh: '锅炉制作' },
   'services.boilermaking':       { pt: 'Caldeiraria',       en: 'Boilermaking',     zh: '锅炉制作' },
-  'services.caldeiraria.desc':  {
-    pt: 'Serviços de caldeiraria pesada e leve, incluindo fabricação de tanques, vasos de pressão, silos e outros equipamentos industriais.',
-    en: 'Heavy and light boilermaking services, including manufacturing of tanks, pressure vessels, silos and other industrial equipment.',
-    zh: '提供重型与轻型锅炉制作服务，包括罐体、压力容器、筒仓及其他工业设备制造。'
-  },
+  'services.structures':         { pt: 'Serviços de campo', en: 'Field service', zh: '现场服务' },
   'services.machining':          { pt: 'Usinagem',          en: 'Machining',        zh: '机加工' },
-  'services.machining.desc':     {
-    pt: 'Usinagem de peças e componentes com precisão, utilizando equipamentos modernos e tecnologia avançada para garantir a qualidade.',
-    en: 'Precision machining of parts and components, using modern equipment and advanced technology to ensure quality.',
-    zh: '使用现代设备和先进技术进行零件与组件的精密加工，确保质量。'
-  },
   'services.maintenance':        { pt: 'Montagem e Manutenção', en: 'Assembly & Maintenance', zh: '装配与维护' },
-  'services.maintenance.desc':   {
-    pt: 'Serviços completos de montagem e manutenção industrial, com equipes especializadas para atendimento eficiente e seguro.',
-    en: 'Complete industrial assembly and maintenance services, with specialized teams for efficient and safe service.',
-    zh: '提供完整的工业装配和维护服务，专业团队确保高效与安全。'
-  },
+  'services.caldeiraria.shortDesc': {
+  pt: 'Na BNG, nossa expertise em caldeiraria leve e pesada atende às demandas do setor de Óleo & Gás.',
+  en: 'At BNG, our expertise in heavy and light boilermaking meets the Oil & Gas sector’s needs.',
+  zh: '在 BNG，我们的重型与轻型锅炉制作专长满足石油天然气行业需求。'
+},
+'services.machining.shortDesc': {
+  pt: 'Usinagem de peças e componentes com precisão e tecnologia avançada.',
+  en: 'Precision machining of parts and components using advanced technology.',
+  zh: '使用先进技术精准加工零部件。'
+},
+'services.maintenance.shortDesc': {
+  pt: 'Serviços completos de montagem e manutenção industrial para todas as etapas.',
+  en: 'Comprehensive industrial assembly & maintenance services for every stage.',
+  zh: '提供全面的工业装配与维护服务。'
+},
+'services.structures.shortDesc': {
+  pt: 'Fabricação e montagem de estruturas metálicas com projetos personalizados e alta resistência.',
+  en: 'Fabrication and assembly of metal structures with custom designs and high durability.',
+  zh: '定制高耐久金属结构的制造与安装。'
+},
+
+// Textos completos (fullDesc) para cada modal:
+'services.caldeiraria.fullDesc': {
+  pt: `Na BNG, nossa expertise em caldeiraria leve e pesada reúne o melhor das técnicas industriais para atender às demandas mais exigentes do setor de Óleo & Gás. Em caldeiraria pesada, fabricamos tanques de grande porte, vasos de pressão certificados, silos robustos e equipamentos industriais sob medida, sempre seguindo rigorosos padrões de qualidade e segurança. Em caldeiraria leve, produzimos jumpers, manifolds, sleepers e painéis modulados, ideais para integração em plantas de processamento, plataformas offshore e instalações onshore. Todo o processo é planejado para garantir rapidez e precisão — desde o corte e conformação de chapas até a soldagem especializada, tratamentos de superfície e inspeção final. Nossa estrutura completa permite gerenciar projetos complexos, entregando soluções customizadas que superam expectativas e impulsionam a eficiência operacional do cliente.`,
+  en: `At BNG, our expertise in heavy and light boilermaking combines top industrial techniques to meet the most demanding requirements of the Oil & Gas sector. In heavy boilermaking, we manufacture large tanks, certified pressure vessels, robust silos, and custom industrial equipment—always adhering to strict quality and safety standards. In light boilermaking, we produce jumpers, manifolds, sleepers, and modular panels, perfect for integration into processing plants, offshore platforms, and onshore facilities. Every step is planned to ensure speed and precision—from plate cutting and forming to specialized welding, surface treatments, and final inspection. Our comprehensive infrastructure manages complex projects, delivering tailor‑made solutions that exceed expectations and drive operational efficiency.`,
+  zh: `在 BNG，我们的重型与轻型锅炉制作专长结合了最先进的工业技术，以满足石油天然气行业最苛刻的需求。重型锅炉制作方面，我们生产大型储罐、认证压力容器、坚固筒仓和定制工业设备——始终严格遵循高质量和安全标准。轻型锅炉制作方面，我们制造跳管（jumpers）、汇流排（manifolds）、支撑架（sleepers）和模块化面板，适用于处理厂、海上平台和陆上设施的集成。每个环节都经过精心规划，以确保速度与精准——从钢板切割与成型，到专业焊接、表面处理和最终检验。我们的全方位生产能力能够承接复杂项目，提供超出预期的定制化解决方案，提升运营效率。`
+},
+'services.machining.fullDesc': {
+  pt: `A BNG oferece usinagem de peças e componentes com precisão milimétrica, utilizando equipamentos CNC de última geração e tecnologia avançada. Nossos processos incluem fresamento, torneamento, retificação e tratamentos especiais, garantindo superfícies de alta qualidade e tolerâncias apertas. Atendemos indústrias críticas, como Óleo & Gás, petroquímica, defesa e energia, com prazos ágeis e compliance às normas mais rígidas.`,
+  en: `BNG provides precision machining of parts and components with state‑of‑the‑art CNC equipment and advanced technology. Our processes include milling, turning, grinding, and special surface treatments—ensuring high‑quality finishes and tight tolerances. We serve critical industries such as Oil & Gas, petrochemicals, defense, and energy, delivering fast turnaround times and strict compliance with the highest standards.`,
+  zh: `BNG使用最先进的CNC设备和先进技术提供零部件的精密加工。我们的流程包括铣削、车削、磨削和特殊表面处理——确保高质量表面和严格公差。我们服务于石油天然气、石化、国防和能源等关键行业，以快速交付和严格遵循最高标准著称。`
+},
+'services.maintenance.fullDesc': {
+  pt: `Oferecemos serviços completos de montagem e manutenção industrial, desde a instalação de equipamentos pesados até paradas programadas e manutenção preditiva. Nossas equipes especializadas garantem montagem precisa de estruturas, tubulações e linhas de produção, além de realizar inspeções, testes não destrutivos (END) e reparos sob os mais rigorosos protocolos de segurança. Estamos prontos para atender demandas urgentes, minimizando paradas e maximizando a disponibilidade operacional.`,
+  en: `We offer comprehensive industrial assembly and maintenance services—from heavy equipment installation to scheduled shutdowns and predictive maintenance. Our specialized teams ensure precise assembly of structures, piping, and production lines, while performing inspections, non‑destructive testing (NDT), and repairs under the strictest safety protocols. We’re ready to meet urgent demands, minimizing downtime and maximizing operational availability.`,
+  zh: `我们提供全面的工业装配和维护服务——从重型设备安装到计划停机和预测性维护。我们的专业团队确保结构、管道和生产线的精确装配，同时在最严格的安全协议下进行检测、无损检测和维修。我们随时准备满足紧急需求，减少停机时间并最大限度提高运行可用性。`
+},
+'services.structures.fullDesc': {
+  pt: `Fabricação e montagem de estruturas metálicas personalizadas para diversos setores, incluindo indústrias de Óleo & Gás, mineração e construção. Utilizamos perfis e chapas de alta resistência, processos de corte a plasma e soldagem automatizada para garantir rapidez e qualidade. Nossa localização estratégica próxima ao porto permite logística eficiente para embarques em balsas e navios, reduzindo custos e prazos de entrega.`,
+  en: `Fabrication and assembly of custom metal structures for various sectors, including Oil & Gas, mining, and construction industries. We use high‑strength profiles and plates, plasma cutting, and automated welding processes to ensure speed and quality. Our strategic location near the port enables efficient logistics for barge and ship shipments, reducing costs and lead times.`,
+  zh: `定制金属结构制造与安装，服务于石油天然气、采矿和建筑等多个行业。我们使用高强度型材与钢板、等离子切割和自动化焊接工艺，确保快速高质。我们靠近港口的战略位置确保驳船/船舶运输效率，降低成本并缩短交货周期。`
+},
+
+// Botões genéricos
+'services.seeMore': {
+  pt: 'Saiba mais',
+  en: 'See More',
+  zh: '了解更多'
+},
+'services.close': {
+  pt: 'Fechar',
+  en: 'Close',
+  zh: '关闭'
+},
+  
+  
 
   // Mission & Values
   'mission.title':          { pt: 'NOSSA MISSÃO',      en: 'OUR MISSION',       zh: '我们的使命' },
@@ -263,14 +299,57 @@ export const TRANSLATIONS: Translations = {
   'footer.services':            { pt: 'Serviços',               en: 'Services',            zh: '服务' },
   'footer.copyright': {pt: '© {{year}} BNG Metalmecânica. Todos os direitos reservados. Desenvolvido por EG Arquitetura de Soluções Digitais.', en: '© {{year}} BNG Metalmecânica. All rights reserved. Developed by EG Arquitetura de Soluções Digitais.', zh: '© {{year}} BNG Metalmecânica。保留所有权利。由 EG Arquitetura de Soluções Digitais 开发',},
 
-  // Infrastructure
-  'infrastructure.title':      { pt: 'INFRAESTRUTURA DA BNG METALMECÂNICA', en: 'BNG METALMECÂNICA INFRASTRUCTURE', zh: '"BNG METALMECÂNICA 基础设施' },
-  'infrastructure.subtitle':   {
-    pt: 'Infraestrutura com mais de 9.000 m² construídos em um terreno de 17.500 m², com capacidade para processar até 300 toneladas/mês em estruturas metálicas, caldeiraria e usinagem.',
-    en: 'Over 9,000 m² of built-up area on a 17,500 m² site, with monthly capacity of up to 300 tons in metal structures, boilerworks, and machining operations.',
-    zh: '超过9,000平方米的建设面积，位于17,500平方米场地，可实现每月处理300吨金属结构、锅炉制作和机加工。'
+  'infrastructure.title': {
+    pt: 'INFRAESTRUTURA BNG METALMECÂNICA',
+    en: 'BNG METALMECÂNICA INFRASTRUCTURE',
+    zh: 'BNG METALMECÂNICA 基础设施'
+  },
+
+  'infrastructure.description': {
+    pt: 'Com um terreno de 70 000 m² — dos quais 36 000 m² já são estruturas metálicas, caldeiraria e usinagem — a BNG oferece capacidade de processamento de até 600 toneladas por mês, garantindo agilidade e precisão em projetos de grande porte.',
+    en: 'Spanning 70,000 m²—36,000 m² dedicated to metal structures, boilerworks, and machining—BNG delivers up to 600 tons/month of processing capacity, ensuring speed and precision for large-scale projects.',
+    zh: 'BNG占地 70,000 平方米，其中 36,000 平方米用于金属结构、锅炉制作和机加工，可实现每月 600 吨的加工能力，确保大型项目的高效与精准。'
+  },
+  'infrastructure.desc1': {
+    pt: 'A BNG opera duas fábricas de caldeiraria e usinagem em Serra, além de duas unidades de pintura industrial, um centro de processamento de matéria-prima (corte e preparação) e um amplo depósito. Nossa estrutura completa garante agilidade e qualidade em todas as etapas do seu projeto.',
+    en: 'BNG operates two boiler-making and machining plants in Serra, plus two industrial painting units, a raw-material processing center (cutting & prep), and a large storage facility. Our comprehensive setup ensures agility and quality at every project stage.',
+    zh: 'BNG在塞拉拥有两座锅炉制作和机加工工厂，另设两座工业喷涂车间、一座原材料加工中心（切割与准备）和大型仓储设施。我们的完整配套确保项目每个环节都快速且高质量完成。'
+  },
+  'infrastructure.desc2': {
+    pt: 'Dentro do Porto de Portocel (Aracruz‑ES), contamos com uma área de fabricação estratégica à front-sea para grandes estruturas e carregamentos em balsas e navios. Essa localização exclusiva garante logística eficiente para clientes de Óleo & Gás e projetos de porte internacional.',
+    en: 'Inside Portocel port (Aracruz‑ES), we have a strategic front‑sea manufacturing zone for large structures and barge/ship loadouts. This exclusive location delivers efficient logistics for Oil & Gas clients and large‑scale international projects.',
+    zh: '我们在Portocel港（阿拉克鲁斯‑ES）内拥有面海战略制造区，可进行大型结构生产及驳船/船舶装载。此独特位置为石油天然气客户和大型国际项目提供高效物流保障。'
+  },
+  'infrastructure.totalAreaLabel': {
+    pt: 'Área Total',
+    en: 'Total Area',
+    zh: '总面积'
+  },
+  'infrastructure.builtAreaLabel': {
+    pt: 'Área Construída',
+    en: 'Built Area',
+    zh: '建筑面积'
+  },
+  'infrastructure.processingCapacityLabel': {
+    pt: 'Capacidade de Processamento',
+    en: 'Processing Capacity',
+    zh: '处理能力'
+  },
+  'infrastructure.capacitySuffix': {
+    pt: ' t/mês',
+    en: ' t/month',
+    zh: ' 吨/月'
+  },
+  'infrastructure.portAreaTitle': {
+    pt: ' ÁREA PORTURIA',
+    en: ' PORT AREA',
+    zh: '港口区'
   },
 };
+
+
+
+
 
 interface LanguageContextType {
   language: 'pt' | 'en' | 'zh';
