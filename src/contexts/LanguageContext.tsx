@@ -135,53 +135,55 @@ export const TRANSLATIONS: Translations = {
   'mission.title':          { pt: 'NOSSA MISSÃO',      en: 'OUR MISSION',       zh: '我们的使命' },
   'mission.mission':        { pt: 'MISSÃO',            en: 'MISSION',           zh: '使命' },
   'mission.mission.desc':   {
-    pt: 'Garantir a disponibilidade e performance dos equipamentos dos nossos clientes, buscando a fidelização através de serviços de qualidade e atendimento diferenciado, com equipes qualificadas e comprometidas com a segurança, meio ambiente e resultados.',
-    en: 'Ensure the availability and performance of our customers\' equipment, seeking loyalty through quality services and differentiated service, with qualified teams committed to safety, environment and results.',
-    zh: '确保客户设备的可用性和性能，通过优质服务和差异化支持赢得忠诚，团队专注于安全、环境和成果。'
+    pt: 'Oferecer soluções em produtos e serviços metalmecânicos que garantam a disponibilidade e performance dos equipamentos dos nossos clientes, buscandoa sua fidelização, utilizando tecnologia inovadora, respeitando o meio ambiente, agregando valor e satisfação aos sócios,fornecedores e colaboradores.',
+    en: 'To provide metal-mechanical products and services solutions that ensure the availability and performance of our clients’ equipment, aiming to secure their loyalty by leveraging innovative technology, respecting the environment, and adding value and satisfaction for partners, suppliers, and employees.',
+    zh: '提供金属机械产品与服务的解决方案，以确保客户设备的可用性和性能；致力于赢得客户忠诚，采用创新技术，尊重环境，并为股东、供应商及员工创造价值和满意度。'
   },
   'mission.vision':         { pt: 'VISÃO',             en: 'VISION',            zh: '愿景' },
   'mission.vision.desc':    {
-    pt: 'Ser reconhecida como referência em soluções metalmecânicas no Brasil, criando valor para clientes, colaboradores e acionistas, através da excelência operacional, inovação e sustentabilidade.',
-    en: 'To be recognized as a reference in metalworking solutions in Brazil, creating value for customers, employees and shareholders, through operational excellence, innovation and sustainability.',
-    zh: '成为巴西金属机械解决方案的标杆，通过卓越运营、创新和可持续发展为客户、员工及股东创造价值。'
+    pt: 'Ser referência no setor metalmecânico do estado do Espírito Santo, oferecendo excelência em fabricação, usinagem, montagem industrial e serviços para a indústria.',
+    en: 'To be a reference in the metal-mechanical sector of the state of Espírito Santo, offering excellence in manufacturing, machining, industrial assembly, and services for the industry.',
+    zh: '成为圣埃斯皮里图桑托州金属机械行业的标杆，提供卓越的制造、加工、工业组装及行业服务。'
   },
   'values.title':           { pt: 'NOSSOS VALORES',    en: 'OUR VALUES',        zh: '我们的价值观' },
   'values.commitment':      { pt: 'COMPROMISSO',       en: 'COMMITMENT',        zh: '承诺' },
   'values.commitment.desc': {
-    pt: 'Cumprimos os prazos e especificações acordados com os clientes.',
-    en: 'We meet the deadlines and specifications agreed with customers.',
-    zh: '我们遵守与客户约定的期限和规范。'
+    pt: 'Envolvimento de todos com a missão da empresa, seus valores e objetivos estratégicos.',
+    en: 'Full engagement of everyone with the company’s mission, its values, and strategic objectives.',
+    zh: '全员参与公司使命、价值观和战略目标。'
   },
   'values.ethics':          { pt: 'ÉTICA',             en: 'ETHICS',            zh: '道德' },
   'values.ethics.desc':     {
-    pt: 'Atuamos com integridade e transparência em todas as relações de negócio.',
-    en: 'We act with integrity and transparency in all business relationships.',
-    zh: '我们在所有业务关系中以诚信和透明度行事。'
+    pt: 'Relacionamento íntegro com os clientes, fornecedores e colaboradores, de forma a inspirar confiança e credibilidade',
+    en: 'Integrity-based relationships with clients, suppliers, and employees to inspire trust and credibility',
+    zh: '与客户、供应商和员工保持诚信关系，以激发信任和信誉。'
   },
   'values.safety':          { pt: 'SEGURANÇA',         en: 'SAFETY',            zh: '安全' },
   'values.safety.desc':     {
-    pt: 'Priorizamos a segurança dos colaboradores e a qualidade dos serviços.',
-    en: 'We prioritize employee safety and service quality.',
-    zh: '我们优先考虑员工安全和服务质量。'
+    pt: 'Oferecer condições seguras de trabalho, visando à integridade física e psicológica dos colaboradores.',
+    en: 'Providing safe working conditions aimed at the physical and psychological well-being of employees.',
+    zh: '提供安全的工作条件，保障员工身心健康。'
   },
   'values.human':           { pt: 'VALORIZAÇÃO HUMANA', en: 'HUMAN VALUE',       zh: '以人为本' },
   'values.human.desc':      {
-    pt: 'Investimos no crescimento e bem-estar de nossa equipe.',
-    en: 'We invest in the growth and well-being of our team.',
-    zh: '我们投资于团队的成长和福祉。'
+    pt: 'Compromissos com a capacitação e desenvolvimento contínuos dos colaboradores, fazendo da BNG uma empresa onde todos tenham prazer em trabalhar',
+    en: 'A commitment to the ongoing training and development of employees, making BNG a company where everyone enjoys working.',
+    zh: '致力于员工的持续培训和发展，使BNG成为一个让所有人都乐于工作的公司。'
   },
   'values.environment':     { pt: 'MEIO AMBIENTE',     en: 'ENVIRONMENT',       zh: '环境' },
   'values.environment.desc':{
-    pt: 'Adotamos práticas sustentáveis em todos os nossos processos.',
-    en: 'We adopt sustainable practices in all our processes.',
-    zh: '我们在所有流程中采用可持续实践。'
+    pt: 'Trabalhar para a minimização dos aspectos e impactos negativos ao meio ambiente.',
+    en: 'Working to minimize negative aspects and impacts on the environment.',
+    zh: '努力最小化对环境的不利方面和负面影响。'
   },
   'values.innovation':      { pt: 'INOVAÇÃO',          en: 'INNOVATION',        zh: '创新' },
   'values.innovation.desc': {
-    pt: 'Buscamos constantemente novas soluções e tecnologias para aprimorar nossos serviços.',
-    en: 'We constantly seek new solutions and technologies to improve our services.',
-    zh: '我们不断寻求新解决方案和技术以改进服务。'
+    pt: 'Busca constante de novos métodos e tecnologias',
+    en: 'A constant pursuit of new methods and technologies',
+    zh: '不断追求新方法和新技术。'
   },
+  'values.cliente':      { pt: 'FOCO AO CLIENTE',          en: 'CUSTOMER FOCUS',        zh: '以客户为中心' },
+  'values.cliente.desc': { pt: 'Dedicação e atenção às necessidades dos clientes, visando à superação de expectativas e ao fortalecimento da confiança em nossos produtos e serviço',          en: 'Dedication and attention to customer needs, aiming to exceed expectations and strengthen confidence in our products and services.',        zh: '专注并关注客户需求，旨在超越预期并增强对我们产品和服务的信任。' }, 
 
   // Certifications
   'cert.title':             { pt: 'NOSSAS CERTIFICAÇÕES', en: 'OUR CERTIFICATIONS', zh: '我们的认证' },
@@ -190,12 +192,36 @@ export const TRANSLATIONS: Translations = {
     en: 'Committed to excellence, we maintain the most important certifications in the sector, ensuring quality and safety in all our services.',
     zh: '我们致力卓越，保持行业最重要的认证，确保所有服务的质量与安全。'
   },
-  'cert.iso45001.title':    { pt: 'ISO 45001:2018',      en: 'ISO 45001:2018',    zh: 'ISO 45001:2018' },
-  'cert.iso45001.desc':     {
-    pt: 'Certificação internacional para Sistemas de Gestão de Saúde e Segurança Ocupacional, demonstrando nosso compromisso com a segurança dos colaboradores.',
-    en: 'International certification for Occupational Health and Safety Management Systems, demonstrating our commitment to employee safety.',
-    zh: '职业健康与安全管理体系国际认证，体现我们对员工安全的承诺。'
+  'cert.iso45001.title':    { pt: 'PRODFOR SGSS',      en: 'PRODFOR SGSS',    zh: 'PRODFOR SGSS' },
+   'cert.iso45001.desc':     {
+   pt: 'Sistema PRODFOR SGSS inspirado na ISO 45001:2018 para Gestão de Saúde e Segurança Ocupacional, com foco em processos de identificação de perigos, avaliação de riscos e controles operacionais, evidenciando nosso compromisso permanente com a integridade física dos colaboradores.',
+   en: 'PRODFOR SGSS system inspired by ISO 45001:2018 for Occupational Health and Safety Management, focusing on hazard identification, risk assessment and operational controls, showcasing our ongoing commitment to employee well‑being.',
+   zh: 'PRODFOR SGSS 系统借鉴了 ISO 45001:2018 的职业健康与安全管理要求，侧重于危险识别、风险评估和操作控制，彰显我们对员工健康持续的承诺。'
+ },
+
+ 'cert.iso45001.tech1':   {
+   pt: 'Implementação de mapeamento de perigos e avaliação de riscos ocupacionais, com matriz de controle de riscos atualizada periodicamente',
+   en: 'Implementation of hazard mapping and occupational risk assessment, with a periodically updated risk control matrix',
+   zh: '实现危险点映射与职业风险评估，并定期更新风险控制矩阵'
+ },
+ 'cert.iso45001.tech2':   {
+   pt: 'Definição de controles operacionais, incluindo procedimentos de trabalho seguro, EPIs adequados e planos de resposta a emergências',
+    en: 'Definition of operational controls, including safe work procedures, appropriate PPE and emergency response plans',
+   zh: '制定操作控制，包括安全作业程序、适当的个体防护装备和应急响应预案'
+ },
+ 'cert.iso45001.tech3':   {
+   pt: 'Monitoramento contínuo de indicadores de desempenho em SST (taxa de incidentes, ATs e Líderes de Segurança) e análise de não-conformidades',
+   en: 'Continuous monitoring of OHS performance indicators (incident rate, LTIs and Safety Observations) and non‑conformity analysis',
+   zh: '持续监测职业健康安全绩效指标（事故率、工伤事故率及安全观察）并进行不合规分析'
   },
+ 'cert.iso45001.tech4':   {
+   pt: 'Programa de treinamento e capacitação periódica para todos os níveis hierárquicos em práticas de segurança do trabalho',
+   en: 'Periodic training and upskilling program for all organizational levels on workplace safety practices',
+   zh: '为各个组织层级定期开展工作安全实践培训与提升计划'
+ },
+
+
+
   'cert.iso45001.benefit1': { pt: 'Ambiente de trabalho mais seguro', en: 'Safer work environment', zh: '更安全的工作环境' },
   'cert.iso45001.benefit2': { pt: 'Redução de acidentes de trabalho', en: 'Reduced workplace accidents', zh: '减少工伤事故' },
   'cert.iso45001.benefit3': { pt: 'Conformidade com requisitos legais', en: 'Compliance with legal requirements', zh: '符合法律要求' },
@@ -206,6 +232,28 @@ export const TRANSLATIONS: Translations = {
     en: 'Supply Quality Management System, ensuring compliance with standards required by major Brazilian industries.',
     zh: '供应质量管理体系，确保符合巴西大型工业的标准要求。'
   },
+
+  'cert.sgqf.tech1':       {
+   pt: 'Padronização de critérios para seleção e qualificação de fornecedores, incluindo auditorias in loco',
+   en: 'Standardization of criteria for supplier selection and qualification, including on‑site audits',
+   zh: '统一供应商选择和资格评定标准，包括现场审核'
+ },
+ 'cert.sgqf.tech2':       {
+   pt: 'Controle rigoroso de qualidade de matérias‑primas e componentes através de inspeções visuais e testes laboratoriais',
+   en: 'Strict quality control of raw materials and components through visual inspections and laboratory tests',
+   zh: '通过目视检查和实验室测试对原材料和零部件进行严格质量控制'
+ },
+ 'cert.sgqf.tech3':       {
+   pt: 'Sistemática de rastreabilidade de lotes, com registro digitalizado e gerenciamento de documentos de fornecimento',
+   en: 'Batch traceability system with digitized records and supply documentation management',
+   zh: '带有数字化记录和供应文档管理的批次可追溯体系'
+ },
+ 'cert.sgqf.tech4':       {
+   pt: 'Avaliação periódica de desempenho de fornecedores e realização de auditorias de conformidade',
+   en: 'Periodic evaluation of supplier performance and execution of compliance audits',
+   zh: '定期评估供应商绩效并执行合规审核'
+ },
+
   'cert.sgqf.benefit1':     { pt: 'Garantia de fornecimento com qualidade', en: 'Quality supply assurance', zh: '高质量供应保证' },
   'cert.sgqf.benefit2':     { pt: 'Processos padronizados e consistentes', en: 'Standardized and consistent processes', zh: '流程标准化与一致性' },
   'cert.sgqf.benefit3':     { pt: 'Rastreabilidade completa dos materiais', en: 'Full material traceability', zh: '材料的完整可追溯性' },
@@ -227,6 +275,28 @@ export const TRANSLATIONS: Translations = {
     zh: '我们的认证彰显卓越承诺，确保所有服务遵循最严格的国际质量和安全标准。'
   },
 
+ 'cert.iso9001.tech1':    {
+   pt: 'Desenvolvimento e implementação de Manual de Qualidade alinhado aos requisitos da norma ISO 9001:2015',
+   en: 'Development and implementation of a Quality Manual aligned with ISO 9001:2015 requirements',
+   zh: '制定并实施与 ISO 9001:2015 要求保持一致的质量手册'
+ },
+ 'cert.iso9001.tech2':    {
+   pt: 'Realização de auditorias internas periódicas e análises críticas pela alta direção para avaliar desempenho do SGQ',
+   en: 'Conducting periodic internal audits and management reviews to evaluate QMS performance',
+   zh: '定期开展内部审核和管理评审，以评估质量管理体系绩效'
+ },
+ 'cert.iso9001.tech3':    {
+   pt: 'Monitoramento de indicadores de qualidade (índice de retrabalho, satisfação do cliente e metas de desempenho) e geração de relatórios gerenciais',
+   en: 'Monitoring quality indicators (rework rate, customer satisfaction and performance targets) and generating management reports',
+   zh: '监测质量指标（返工率、客户满意度和绩效目标）并生成管理报告'
+ },
+ 'cert.iso9001.tech4':    {
+   pt: 'Gestão de ações corretivas e preventivas para tratamento de não-conformidades e busca contínua por melhorias de processo',
+   en: 'Management of corrective and preventive actions to address non‑conformities and drive continual process improvement',
+   zh: '管理纠正和预防措施，以解决不合格并推动持续改进'
+ },
+  'cert.technicalTitle':    { pt: 'ESPECIFICAÇÕES TÉCNICAS', en: 'TECHNICAL SPECIFICATIONS', zh: '技术规格' },
+
   // Clients
   'clients.title':          { pt: 'NOSSOS CLIENTES',    en: 'OUR CLIENTS',       zh: '我们的客户' },
   'clients.subtitle':       {
@@ -236,7 +306,7 @@ export const TRANSLATIONS: Translations = {
   },
   'clients.category.all':       { pt: 'TODOS OS CLIENTES',        en: 'ALL CLIENTS',        zh: '所有客户' },
   'clients.category.oilgas':    { pt: 'ÓLEO E GÁS',               en: 'OIL & GAS',          zh: '石油与天然气' },
-  'clients.category.offshore':  { pt: 'ESTALEIROS E OFFSHORE',    en: 'SHIPYARDS & OFFSHORE', zh: '船厂与海上工程' },
+  'clients.category.offshore':  { pt: 'ESTALEIROS',    en: 'SHIPYARDS', zh: '造船厂' },
   'clients.category.steel':     { pt: 'SIDERURGIA',               en: 'STEEL',               zh: '钢铁' },
   'clients.category.mining':    { pt: 'MINERAÇÃO',                en: 'MINING',              zh: '采矿' },
   'clients.category.pulp':      { pt: 'PAPEL E CELULOSE',         en: 'PULP & PAPER',        zh: '纸浆与造纸' },
@@ -345,6 +415,23 @@ export const TRANSLATIONS: Translations = {
     en: ' PORT AREA',
     zh: '港口区'
   },
+
+  'mission.policyTitle': {
+    pt: 'Política do SGI',
+    en: 'SGI Policy',
+    zh: 'SGI 政策'
+  },
+  'mission.policyDesc': {
+    pt: 'A BNG, em sua área de atuação, realiza processos de usinagem, caldeiraria e pintura, com o objetivo de garantir satisfação de seus clientes, o bem-estar de seus funcionários e o crescimento sustentável dos negócios. Para mais detalhes, consulte nossa política do SGI abaixo.',
+    en: 'BNG, in its area of operation, carries out machining, boilermaking, and painting processes, with the aim of ensuring customer satisfaction, the well‑being of its employees, and sustainable business growth. For more details, consult our SGI policy below.',
+    zh: 'BNG 在其业务领域内开展机加工、锅炉制作和喷涂等工艺，旨在确保客户满意、员工福祉以及业务的可持续增长。更多详情，请参阅下方我们的 SGI 政策。'
+  },
+  'mission.policyButton': {
+    pt: 'Baixar PDF',
+    en: 'Download PDF',
+    zh: '下载 PDF'
+  },
+
 };
 
 

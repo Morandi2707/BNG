@@ -41,12 +41,12 @@ interface Client {
 }
 
 const allClients: Client[] = [
-  { id:'1',  name:'Aliseo',        logo:aliseoLogo,       categories:['oilgas','offshore'], href:'https://www.aliseosa.com.br/sobre/' },
-  { id:'2',  name:'TechnipFMC',    logo:technipLogo,       categories:['oilgas','offshore'], href:'https://www.technipfmc.com' },
-  { id:'3',  name:'Baker Hughes',  logo:bakerLogo,         categories:['oilgas','offshore'], href:'https://www.bakerhughes.com' },
-  { id:'4',  name:'Prysmian',      logo:prysLogo,          categories:['offshore'],           href:'https://www.prysmiangroup.com' },
-  { id:'5',  name:'Ocyan',         logo:ocyanLogo,         categories:['offshore'],           href:'https://www.ocyan.com.br' },
-  { id:'6',  name:'Subsea7',       logo:subsea7Logo,       categories:['offshore'],           href:'https://www.subsea7.com' },
+  { id:'1',  name:'Aliseo',        logo:aliseoLogo,       categories:['oilgas'], href:'https://www.aliseosa.com.br/sobre/' },
+  { id:'2',  name:'TechnipFMC',    logo:technipLogo,       categories:['oilgas'], href:'https://www.technipfmc.com' },
+  { id:'3',  name:'Baker Hughes',  logo:bakerLogo,         categories:['oilgas'], href:'https://www.bakerhughes.com' },
+  { id:'4',  name:'Prysmian',      logo:prysLogo,          categories:['oilgas'],           href:'https://www.prysmiangroup.com' },
+  { id:'5',  name:'Ocyan',         logo:ocyanLogo,         categories:['oilgas'],           href:'https://www.ocyan.com.br' },
+  { id:'6',  name:'Subsea7',       logo:subsea7Logo,       categories:['oilgas'],           href:'https://www.subsea7.com' },
   { id:'7',  name:'Arcelormittal', logo:arcLogo,           categories:['steel'],              href:'https://corporate.arcelormittal.com' },
   { id:'8',  name:'Vale',          logo:valeLogo,          categories:['mining'],             href:'https://www.vale.com' },
   { id:'9',  name:'Grupo Simec',   logo:simecLogo,         categories:['steel'],              href:'https://www.simec.com.br' },
@@ -55,7 +55,7 @@ const allClients: Client[] = [
   { id:'12', name:'Suzano',        logo:suzanoLogo,        categories:['pulp'],               href:'https://www.suzano.com.br' },
   { id:'13', name:'Petrobras',     logo:petrobrasLogo,     categories:['oilgas'],             href:'https://petrobras.com.br' },
   { id:'14', name:'Seatrium',      logo:seatriumLogo,      categories:['offshore'],           href:'https://seatrium.com/brazil-pt.php' },
-  { id:'15', name:'Oceaneering',   logo:oceaneeringLogo,   categories:['offshore'],           href:'https://www.oceaneering.com/pt/' },
+  { id:'15', name:'Oceaneering',   logo:oceaneeringLogo,   categories:['oilgas'],           href:'https://www.oceaneering.com/pt/' },
   { id:'16', name:'Rede Montagens',logo:redeLogo,          categories:['steel','mining'],     href:'https://redemontagens.com.br/' },
   { id:'17', name:'SunCoke',       logo:suncokeLogo,       categories:['mining'],             href:'https://www.suncoke.com/pt' },
 ];

@@ -5,12 +5,14 @@ import SectionTitle from '../ui/SectionTitle';
 import { LanguageContext } from '../../contexts/LanguageContext';
 
 // Imagens
-import Yey from '../img/guindaste.webp';
+import Yey from '../img/guindaste.jpg';
 import Munck from '../img/MunckBng.jpg';
 import Munck10T from '../img/Munck10T.jpg';
 import UnidadeMovel from '../img/UnidadeMovel.jpg';
 import CarretaExtensiva from '../img/CarretaExtensiva.jpg';
 import CarretaConvecional from '../img/CarretaConvecional.jpg';
+import pranchas from '../img/pranchas.jpg';
+import CavalosMecanicos from '../img/CavaloMecanicos.jpg';
 
 const Equipment = () => {
   const { translate } = useContext(LanguageContext);
@@ -33,11 +35,11 @@ const Equipment = () => {
         { key: 'equipment.carretaConvencional', image: CarretaConvecional },
         {
           key: 'equipment.cavalosMecanicos',
-          image: 'https://images.pexels.com/photos/2552086/pexels-photo-2552086.jpeg',
+          image: CavalosMecanicos,
         },
         {
           key: 'equipment.pranchas',
-          image: 'https://images.pexels.com/photos/2538162/pexels-photo-2538162.jpeg',
+          image: pranchas,
         },
       ],
     },
