@@ -101,9 +101,6 @@ const Certifications = () => {
             {/* Lado esquerdo: Especificações técnicas */}
             <div className="p-8 text-left">
               <FileCog size={64} color={C.color} className="mb-4" />
-              <h3 className="text-2xl font-bold mb-4 uppercase">
-                {translate(C.titleKey)} — {translate('cert.technicalTitle')}
-              </h3>
               <ul className="space-y-2">
                 {C.technical.map((tKey, idx) => (
                   <li key={idx} className="flex items-start">
@@ -121,9 +118,7 @@ const Certifications = () => {
             {/* Lado direito: Visão geral & Benefícios */}
             <div className="bg-[#042c70] flex flex-col items-start justify-center p-12">
               <Badge size={48} color="#f5cb0d" className="mb-4" />
-              <h3 className="text-2xl font-bold mb-4 uppercase text-white">
-                {translate(C.titleKey)}
-              </h3>
+            
               <p className="text-gray-300 mb-6 text-left">
                 {translate(C.descKey)}
               </p>
