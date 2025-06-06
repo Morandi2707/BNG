@@ -182,8 +182,17 @@ export const TRANSLATIONS: Translations = {
     en: 'A constant pursuit of new methods and technologies',
     zh: '不断追求新方法和新技术。'
   },
+
+  'values.negocio': {pt: 'NEGOCIOS', en: 'BUSINESS', zh: ' 商业'},
+  'values.negocio.desc': { pt:'Soluções em produtos e serviços metalmecânicos que garantam disponibilidade e performance dos equipamentos dos nossos clientes.', en: 'Solutions in metal-mechanical products and services that ensure the availability and performance of our clients equipment.',
+    zh:'提供金属机械产品与服务解决方案，保障客户设备的可用性与性能。'
+  },
+
   'values.cliente':      { pt: 'FOCO AO CLIENTE',          en: 'CUSTOMER FOCUS',        zh: '以客户为中心' },
   'values.cliente.desc': { pt: 'Dedicação e atenção às necessidades dos clientes, visando à superação de expectativas e ao fortalecimento da confiança em nossos produtos e serviço',          en: 'Dedication and attention to customer needs, aiming to exceed expectations and strengthen confidence in our products and services.',        zh: '专注并关注客户需求，旨在超越预期并增强对我们产品和服务的信任。' }, 
+  'values.qualidade':    { pt: 'QUALIDADE',          en: 'QUALITY',        zh: '质量' },
+  'values.qualidade.desc': { pt: 'Compromisso com a política e melhoria contínua da eficácia do sistema de gestão integrado..',          en: 'A commitment to policy and the continuous improvement of the effectiveness of the integrated management system.',        zh: '致力于政策执行并持续改进综合管理体系的有效性。' },
+
 
   // Certifications
   'cert.title':             { pt: 'NOSSAS CERTIFICAÇÕES', en: 'OUR CERTIFICATIONS', zh: '我们的认证' },

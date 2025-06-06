@@ -10,7 +10,9 @@ import {
   Lightbulb,
   User,
   FileText,
-  DownloadCloud
+  DownloadCloud,
+  Handshake,
+  ThumbsUp
 } from 'lucide-react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
@@ -24,7 +26,9 @@ const iconsValue = {
   human:       <Users size={28} className="text-[#f5cb0d]" />,
   environment: <Leaf size={28} className="text-[#f5cb0d]" />,
   innovation:  <Lightbulb size={28} className="text-[#f5cb0d]" />,
-  cliente:     <User size={28} className="text-[#f5cb0d]" />
+  cliente:     <User size={28} className="text-[#f5cb0d]" />,
+  negocio:     <Handshake size={28} className="text-[#f5cb0d]" />,
+  qualidade:    <ThumbsUp size={28} className="text-[#f5cb0d]" />,
 };
 
 const Mission = () => {
@@ -36,7 +40,9 @@ const Mission = () => {
     'human',
     'environment',
     'innovation',
-    'cliente'
+    'cliente',
+    'negocio',
+    'qualidade'
   ] as const;
 
   return (
