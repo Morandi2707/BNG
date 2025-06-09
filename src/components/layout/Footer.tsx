@@ -1,6 +1,6 @@
 // src/components/layout/Footer.tsx
 import { useContext } from 'react';
-import { Phone, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Phone, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
 import Container from '../ui/Container';
 import { LanguageContext } from '../../contexts/LanguageContext';
 import LogoBNG from '../img/LOGO-BNG-SEM-NOME.png';
@@ -14,6 +14,7 @@ const Footer = () => {
     { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/company/bng-metalmec%C3%A2nica-ltda?originalSubdomain=br' },
     { icon: <Instagram size={20} />, href: 'https://www.instagram.com/bngmetalmecanica/' },
     { icon: <Facebook size={20} />, href: 'http://www.facebook.com/bngmetalmecanica' },
+    { icon: <Youtube size={20} />, href: 'https://www.youtube.com/@bngmetalmecanica' },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent, href: string) => {
