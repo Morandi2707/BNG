@@ -1,7 +1,7 @@
 // src/components/Certifications.tsx
 
 import { useState, useContext } from 'react';
-import { Badge, CheckCircle, File, FileCog } from 'lucide-react';
+import { Medal, CheckCircle, File, FileCog } from 'lucide-react';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import { LanguageContext } from '../../contexts/LanguageContext';
@@ -117,7 +117,7 @@ const Certifications = () => {
 
             {/* Lado direito: Visão geral & Benefícios */}
             <div className="bg-[#042c70] flex flex-col items-start justify-center p-12">
-              <Badge size={48} color="#f5cb0d" className="mb-4" />
+              <Medal size={48} color="#f5cb0d" className="mb-4" />
             
               <p className="text-gray-300 mb-6 text-left">
                 {translate(C.descKey)}

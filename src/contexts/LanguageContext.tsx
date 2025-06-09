@@ -19,6 +19,12 @@ export const TRANSLATIONS: Translations = {
   'nav.clients':        { pt: 'Clientes',          en: 'Clients',           zh: '客户' },
   'nav.contact':        { pt: 'Contato',           en: 'Contact',           zh: '联系我们' },
   'button.contact':     { pt: 'Fale Conosco',      en: 'Contact Us',        zh: '联系我们' },
+  'nav.infrastructure': { pt: 'Infraestrutura',    en: 'Infrastructure',    zh: '基础设施' },
+  'nav.missionVision': {pt: 'Nossa Politica',      en: 'Our Policy',        zh: '我们的政策' },
+  'nav.mission':        { pt: 'Missão',            en: 'Mission',           zh: '使命' },
+  'nav.values':         { pt: 'Valores',           en: 'Values',            zh: '价值' },
+  'nav.headquarters':   { pt: 'Industrial' ,       en: 'Industrial',        zh: '工业区' },
+  'nav.portArea':      {pt: 'Area Portuaria',    en: 'Port Area',         zh: '港口区域' },
 
   // Hero
   'hero.title':           { pt: 'BNG METALMECÂNICA', en: 'BNG METALMECÂNICA', zh: 'BNG METALMECÂNICA' },
@@ -350,9 +356,9 @@ export const TRANSLATIONS: Translations = {
     zh: '巴西塞拉市塔尔玛·罗德里格斯·里贝罗大道1891号 Civit II'
   },
   'contact.info.phoneLabel':    { pt: 'Telefone',                      en: 'Phone',                zh: '电话' },
-  'contact.info.phone1':        { pt: '(27) 3182-2857',               en: '(27) 3182-2857',       zh: '（27）3182-2857' },
-  'contact.info.phone2':        { pt: '(27) 99911-9003',              en: '(27) 99911-9003',      zh: '（27）99911-9003' },
-  'contact.info.phone3':        { pt: '(27) 3182-2883',               en: '(27) 3182-2883',       zh: '（27）3182-2883' },
+  'contact.info.phone1':        { pt: '+55 (27) 3182-2899',               en: '+55 (27) 3182-2899',       zh: '+55 （27）3182-2899' },
+  'contact.info.phone2':        { pt: '+55 (27) 99911-9003',              en: '+55 (27) 99911-9003',      zh: '+55 （27）99911-9003' },
+  'contact.info.phone3':        { pt: '+55 (27) 3182-2883',               en: '+55 (27) 3182-2883',       zh: '+55 （27）3182-2883' },
   'contact.info.emailLabel':    { pt: 'E-mail',                        en: 'E-mail',               zh: '电子邮件' },
   'contact.info.email1':        { pt: 'rh@bng-es.com.br',             en: 'rh@bng-es.com.br',      zh: 'rh@bng-es.com.br' },
   'contact.info.email2':        { pt: 'oportunidades@bng-es.com.br',  en: 'oportunidades@bng-es.com.br', zh: 'oportunidades@bng-es.com.br' },
@@ -360,8 +366,8 @@ export const TRANSLATIONS: Translations = {
 
   // Equipment
   'equip.title':                { pt: 'Nosso Parque de Equipamentos', en: 'Our Equipment Park',   zh: '我们的设备' },
-  'equip.category.cranes':     { pt: 'Guindastes e Munck',           en: 'Cranes and Munck',     zh: '起重机与吊车' },
-  'equip.category.transport':  { pt: 'Transporte',                   en: 'Transport',            zh: '运输' },
+  'equip.category.cranes':     { pt: 'Guindastes e Muncks',           en: 'Cranes and Muncks',     zh: '起重机与吊车' },
+  'equip.category.transport':  { pt: 'Transportes',                   en: 'Transports',            zh: '运输' },
 
   'equipment.crane110t':        { pt: 'Guindaste 110t',         en: 'Crane 110t',            zh: '110吨起重机' },
   'equipment.munck15t':         { pt: 'Munck 15t',              en: 'Munck 15t',             zh: '15吨吊车' },
@@ -376,7 +382,7 @@ export const TRANSLATIONS: Translations = {
   'footer.tagline':             { pt: 'BNG METALMECÂNICA',      en: 'BNG METALMECÂNICA',   zh: 'BNG METALMECÂNICA' },
   'footer.links':               { pt: 'Links',                  en: 'Links',               zh: '链接' },
   'footer.services':            { pt: 'Serviços',               en: 'Services',            zh: '服务' },
-  'footer.copyright': {pt: '© {{year}} BNG Metalmecânica. Todos os direitos reservados. Desenvolvido por EG Arquitetura de Soluções Digitais.', en: '© {{year}} BNG Metalmecânica. All rights reserved. Developed by EG Arquitetura de Soluções Digitais.', zh: '© {{year}} BNG Metalmecânica。保留所有权利。由 EG Arquitetura de Soluções Digitais 开发',},
+  'footer.copyright': {pt: '© {{year}} BNG Metalmecânica. Todos os direitos reservados. Desenvolvido por Eduardo Morandi e Gabriel Gomes', en: '© {{year}} BNG Metalmecânica. All rights reserved. Developed by Eduardo Morandi and Gabriel Gomes.', zh: '© {{year}} BNG Metalmecânica。保留所有权利。由 Eduardo Morandi 和 Gabriel Gomes 开发',},
 
   'infrastructure.title': {
     pt: 'INFRAESTRUTURA BNG METALMECÂNICA',
@@ -420,7 +426,7 @@ export const TRANSLATIONS: Translations = {
     zh: ' 吨/月'
   },
   'infrastructure.portAreaTitle': {
-    pt: ' ÁREA PORTURIA',
+    pt: ' ÁREA PORTUARIA',
     en: ' PORT AREA',
     zh: '港口区'
   },
@@ -436,9 +442,9 @@ export const TRANSLATIONS: Translations = {
     zh: 'BNG 在其业务领域内开展机加工、锅炉制作和喷涂等工艺，旨在确保客户满意、员工福祉以及业务的可持续增长。更多详情，请参阅下方我们的 SGI 政策。'
   },
   'mission.policyButton': {
-    pt: 'Baixar PDF',
-    en: 'Download PDF',
-    zh: '下载 PDF'
+    pt: 'Visualizar PDF',
+    en: 'View PDF',
+    zh: '查看 PDF'
   },
 
 };
